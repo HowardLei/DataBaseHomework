@@ -13,7 +13,7 @@
 @property (weak, nonatomic) IBOutlet UITextField *createPasswordTextField;
 @property (weak, nonatomic) IBOutlet UITextField *againPasswordTextField;
 @property (weak, nonatomic) IBOutlet UITextField *userModeView;
-
+@property (weak, nonatomic) IBOutlet UIBarButtonItem *uploadButton;
 @end
 
 @implementation ITRegisterController
@@ -22,8 +22,15 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     NSNotificationCenter *center = NSNotificationCenter.defaultCenter;
+    [center addObserver:self selector:@selector(canUploadNewData) name:UITextFieldTextDidChangeNotification object:self.createUserTextField];
+    [center addObserver:self selector:@selector(canUploadNewData) name:UITextFieldTextDidChangeNotification object:self.createPasswordTextField];
+    [center addObserver:self selector:@selector(canUploadNewData) name:UITextFieldTextDidChangeNotification object:self.againPasswordTextField];
+    [center addObserver:self selector:@selector(canUploadNewData) name:UITextFieldTextDidChangeNotification object:self.userModeView];
 }
-
+- (void)canUploadNewData {
+    // FIXME: 这个地方没法判断 userModeView 的成功添加的条件
+    self.uploadButton.enabled = (![self.createUserTextField.text isEqualToString:@""] && ![self.createPasswordTextField.text isEqualToString:@""] && ![self.againPasswordTextField.text isEqualToString:@""]);
+}
 #pragma mark - Navigation
 // In a storyboard-based application, you will often want to do a little preparation before navigation
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {

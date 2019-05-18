@@ -93,7 +93,6 @@
         <!--注册新用户-->
         <scene sceneID="dEH-uR-DVI">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="7v2-iY-hEe" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <viewController id="M2O-2T-t9g" customClass="ITRegisterController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="HfB-Qv-fB2">
                         <rect key="frame" x="0.0" y="0.0" width="1112" height="834"/>
@@ -146,9 +145,11 @@
                         <outlet property="againPasswordTextField" destination="Nf2-Mx-H5h" id="O1P-QK-39a"/>
                         <outlet property="createPasswordTextField" destination="NSN-TS-Dhl" id="zek-2U-qgL"/>
                         <outlet property="createUserTextField" destination="5mv-Tv-qsb" id="t5u-rB-aXF"/>
+                        <outlet property="uploadButton" destination="lJT-gd-4Ou" id="RYM-K2-2Kb"/>
                         <outlet property="userModeView" destination="LN5-Yw-TeA" id="Fsg-Ge-v6i"/>
                     </connections>
                 </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="7v2-iY-hEe" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1552.8776978417266" y="-414.38848920863313"/>
         </scene>
