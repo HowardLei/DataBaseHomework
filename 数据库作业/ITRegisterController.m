@@ -21,6 +21,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+    NSNotificationCenter *center = NSNotificationCenter.defaultCenter;
 }
 
 #pragma mark - Navigation
@@ -33,5 +34,7 @@
 - (void)viewWillDisappear:(BOOL)animated {
     [super viewWillDisappear:animated];
 }
-
+- (void)dealloc {
+    [NSNotificationCenter.defaultCenter removeObserver:self];
+}
 @end
