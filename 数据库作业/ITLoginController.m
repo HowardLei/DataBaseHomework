@@ -27,7 +27,11 @@
     self.loginButton.enabled = (![self.userTextField.text isEqualToString:@""] && ![self.passwordTextField.text isEqualToString:@""]);
 }
 - (IBAction)loginIn:(UIButton *)sender {
-    
+    NSString *admin = @"admin";
+    NSString *password = @"123456";
+    if ([admin isEqualToString:self.userTextField.text] && [password isEqualToString:self.passwordTextField.text]) {
+        [self performSegueWithIdentifier:@"toTeacher" sender:nil];
+    }
 }
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
     

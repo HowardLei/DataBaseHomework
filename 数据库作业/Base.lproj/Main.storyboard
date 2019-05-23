@@ -98,29 +98,29 @@
                         <rect key="frame" x="0.0" y="0.0" width="1112" height="834"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <textField opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="新创建的用户名" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="5mv-Tv-qsb">
-                                <rect key="frame" x="406" y="123" width="300" height="30"/>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="新创建的用户名" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="5mv-Tv-qsb">
+                                <rect key="frame" x="406" y="130" width="300" height="30"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="300" id="mSI-am-wMa"/>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="300" id="mSI-am-wMa"/>
                                 </constraints>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <textField opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="设置你的密码" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="NSN-TS-Dhl">
-                                <rect key="frame" x="484.5" y="173" width="143.5" height="30"/>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="设置你的密码" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="NSN-TS-Dhl">
+                                <rect key="frame" x="406" y="180" width="300" height="30"/>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <textField opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="请再输入一遍你的密码" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Nf2-Mx-H5h">
-                                <rect key="frame" x="443.5" y="222" width="225" height="30"/>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="请再输入一遍你的密码" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Nf2-Mx-H5h">
+                                <rect key="frame" x="406" y="230" width="300" height="30"/>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <textField opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="请选择添加的用户" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="LN5-Yw-TeA">
-                                <rect key="frame" x="460" y="275" width="192" height="30"/>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="请选择添加的用户" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="LN5-Yw-TeA">
+                                <rect key="frame" x="406" y="280" width="300" height="30"/>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="21"/>
                                 <textInputTraits key="textInputTraits"/>
@@ -131,10 +131,17 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
+                            <constraint firstItem="Nf2-Mx-H5h" firstAttribute="width" secondItem="NSN-TS-Dhl" secondAttribute="width" id="G3j-bw-RQz"/>
                             <constraint firstItem="NSN-TS-Dhl" firstAttribute="centerX" secondItem="5mv-Tv-qsb" secondAttribute="centerX" id="Jdx-cn-EuP"/>
+                            <constraint firstItem="NSN-TS-Dhl" firstAttribute="width" secondItem="5mv-Tv-qsb" secondAttribute="width" id="N61-hk-UEd"/>
+                            <constraint firstItem="LN5-Yw-TeA" firstAttribute="top" secondItem="Nf2-Mx-H5h" secondAttribute="bottom" constant="20" id="TGE-bo-prc"/>
                             <constraint firstItem="LN5-Yw-TeA" firstAttribute="centerX" secondItem="5mv-Tv-qsb" secondAttribute="centerX" id="ZCx-DA-V8P"/>
+                            <constraint firstItem="LN5-Yw-TeA" firstAttribute="width" secondItem="NSN-TS-Dhl" secondAttribute="width" id="ZGl-zD-gT9"/>
                             <constraint firstItem="Nf2-Mx-H5h" firstAttribute="centerX" secondItem="5mv-Tv-qsb" secondAttribute="centerX" id="dQt-jZ-S4Q"/>
                             <constraint firstItem="5mv-Tv-qsb" firstAttribute="centerX" secondItem="HfB-Qv-fB2" secondAttribute="centerX" id="hNc-fe-Nkw"/>
+                            <constraint firstItem="5mv-Tv-qsb" firstAttribute="top" secondItem="Cbx-kk-JAP" secondAttribute="top" constant="60" id="nIf-zt-9ba"/>
+                            <constraint firstItem="Nf2-Mx-H5h" firstAttribute="top" secondItem="NSN-TS-Dhl" secondAttribute="bottom" constant="20" id="nXZ-lO-oPi"/>
+                            <constraint firstItem="NSN-TS-Dhl" firstAttribute="top" secondItem="5mv-Tv-qsb" secondAttribute="bottom" constant="20" id="ypG-nl-SrU"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="Cbx-kk-JAP"/>
                     </view>
@@ -153,16 +160,30 @@
             </objects>
             <point key="canvasLocation" x="1552.8776978417266" y="-414.38848920863313"/>
         </scene>
-        <!--Teacher Controller-->
+        <!--Title-->
         <scene sceneID="lss-eq-pQK">
             <objects>
                 <viewController id="RyQ-Od-ODf" customClass="ITTeacherController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="GWL-N2-Zke">
                         <rect key="frame" x="0.0" y="0.0" width="1112" height="834"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tabBar contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="GJc-A8-Rue">
+                                <rect key="frame" x="0.0" y="785" width="1112" height="49"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <items>
+                                    <tabBarItem systemItem="favorites" id="KDY-1I-vcu"/>
+                                    <tabBarItem systemItem="more" id="9YD-82-IQN"/>
+                                </items>
+                            </tabBar>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="F3O-LJ-yP0"/>
                     </view>
+                    <navigationItem key="navigationItem" title="Title" id="3n7-0a-e2Q">
+                        <barButtonItem key="backBarButtonItem" title="注销" id="aMp-pk-zgI"/>
+                    </navigationItem>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="EqC-Cz-icm" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
