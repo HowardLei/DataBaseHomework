@@ -31,12 +31,6 @@
     // FIXME: 这个地方没法判断 userModeView 的成功添加的条件
     self.uploadButton.enabled = (![self.createUserTextField.text isEqualToString:@""] && ![self.createPasswordTextField.text isEqualToString:@""] && ![self.againPasswordTextField.text isEqualToString:@""]);
 }
-#pragma mark - Navigation
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
 // 当点击返回的时候，通过这个方法进行方法回调
 - (void)viewWillDisappear:(BOOL)animated {
     [super viewWillDisappear:animated];
