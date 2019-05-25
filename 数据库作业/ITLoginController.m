@@ -38,7 +38,7 @@
     NSString *password = @"123456";
     if ([admin isEqualToString:self.userTextField.text] && [password isEqualToString:self.passwordTextField.text]) {
         // FIXME: 导航控制器与底边控制器逻辑还是混乱，不知道如何弄出来
-        [self performSegueWithIdentifier:@"toTeacher" sender:nil];
+        [self performSegueWithIdentifier:@"toAdmin" sender:nil];
     }
 }
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {

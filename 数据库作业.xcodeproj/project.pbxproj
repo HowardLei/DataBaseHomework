@@ -7,9 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		18B5E42B229965B700CF4781 /* ITAdminController.m in Sources */ = {isa = PBXBuildFile; fileRef = 18B5E42A229965B700CF4781 /* ITAdminController.m */; };
+		18B5E42E22996D9A00CF4781 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 18B5E42D22996D9A00CF4781 /* Assets.xcassets */; };
 		6395F018228FF13D007EA3EB /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 6395F017228FF13D007EA3EB /* AppDelegate.m */; };
 		6395F01E228FF13D007EA3EB /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6395F01C228FF13D007EA3EB /* Main.storyboard */; };
-		6395F020228FF13E007EA3EB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6395F01F228FF13E007EA3EB /* Assets.xcassets */; };
 		6395F023228FF13E007EA3EB /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6395F021228FF13E007EA3EB /* LaunchScreen.storyboard */; };
 		6395F026228FF13E007EA3EB /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 6395F025228FF13E007EA3EB /* main.m */; };
 		6395F033228FFBF8007EA3EB /* ITLoginController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6395F032228FFBF8007EA3EB /* ITLoginController.m */; };
@@ -19,11 +20,13 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		18B5E429229965B700CF4781 /* ITAdminController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ITAdminController.h; sourceTree = "<group>"; };
+		18B5E42A229965B700CF4781 /* ITAdminController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ITAdminController.m; sourceTree = "<group>"; };
+		18B5E42D22996D9A00CF4781 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		6395F013228FF13D007EA3EB /* 数据库作业.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "数据库作业.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		6395F016228FF13D007EA3EB /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		6395F017228FF13D007EA3EB /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		6395F01D228FF13D007EA3EB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		6395F01F228FF13E007EA3EB /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		6395F022228FF13E007EA3EB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		6395F024228FF13E007EA3EB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		6395F025228FF13E007EA3EB /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -87,6 +90,8 @@
 				6395F038229001EC007EA3EB /* ITTeacherController.m */,
 				6395F03A22900206007EA3EB /* ITStudentController.h */,
 				6395F03B22900206007EA3EB /* ITStudentController.m */,
+				18B5E429229965B700CF4781 /* ITAdminController.h */,
+				18B5E42A229965B700CF4781 /* ITAdminController.m */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -119,7 +124,7 @@
 		6395F030228FF9DF007EA3EB /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				6395F01F228FF13E007EA3EB /* Assets.xcassets */,
+				18B5E42D22996D9A00CF4781 /* Assets.xcassets */,
 				6395F024228FF13E007EA3EB /* Info.plist */,
 				6395F025228FF13E007EA3EB /* main.m */,
 			);
@@ -185,7 +190,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				6395F023228FF13E007EA3EB /* LaunchScreen.storyboard in Resources */,
-				6395F020228FF13E007EA3EB /* Assets.xcassets in Resources */,
+				18B5E42E22996D9A00CF4781 /* Assets.xcassets in Resources */,
 				6395F01E228FF13D007EA3EB /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -203,6 +208,7 @@
 				6395F033228FFBF8007EA3EB /* ITLoginController.m in Sources */,
 				6395F03C22900206007EA3EB /* ITStudentController.m in Sources */,
 				6395F036228FFEE0007EA3EB /* ITRegisterController.m in Sources */,
+				18B5E42B229965B700CF4781 /* ITAdminController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

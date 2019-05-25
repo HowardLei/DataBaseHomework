@@ -70,28 +70,12 @@
                         <outlet property="loginButton" destination="LgU-47-dUS" id="xWT-HL-Ewe"/>
                         <outlet property="passwordTextField" destination="ASt-ew-cgO" id="tg1-Mu-M2w"/>
                         <outlet property="userTextField" destination="5aY-8W-kPj" id="JR3-fC-7he"/>
-                        <segue destination="xg8-3g-waH" kind="show" identifier="toStudent" id="lyQ-5o-P3F"/>
-                        <segue destination="JHY-7y-fPU" kind="show" identifier="toTeacher" id="1a6-H9-Gde"/>
+                        <segue destination="qqa-Bf-kBH" kind="show" identifier="toAdmin" id="jHQ-DS-WeP"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="841.1870503597122" y="272.66187050359713"/>
-        </scene>
-        <!--Student Controller-->
-        <scene sceneID="lcL-CM-tLT">
-            <objects>
-                <viewController id="xg8-3g-waH" customClass="ITStudentController" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="pjU-HL-Qxu">
-                        <rect key="frame" x="0.0" y="0.0" width="1112" height="834"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <viewLayoutGuide key="safeArea" id="2Hv-yJ-4ul"/>
-                    </view>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="0Px-e7-6VQ" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="1553" y="1003"/>
         </scene>
         <!--注册新用户-->
         <scene sceneID="dEH-uR-DVI">
@@ -179,7 +163,7 @@
             </objects>
             <point key="canvasLocation" x="2996" y="617"/>
         </scene>
-        <!--Item 1-->
+        <!--首页-->
         <scene sceneID="1AI-TR-tib">
             <objects>
                 <viewController id="DXb-L8-dC6" sceneMemberID="viewController">
@@ -189,16 +173,34 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="bi8-Gx-MbG"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Item 1" id="MBA-Qj-VtK"/>
+                    <tabBarItem key="tabBarItem" title="首页" id="MBA-Qj-VtK"/>
+                    <navigationItem key="navigationItem" id="Nyq-kH-Qrh"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="5J7-Gz-piX" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2996" y="-35"/>
+            <point key="canvasLocation" x="2981" y="-196"/>
         </scene>
-        <!--Tab Bar Controller-->
+        <!--Admin Controller-->
+        <scene sceneID="d1m-q0-Cyc">
+            <objects>
+                <navigationController id="qqa-Bf-kBH" customClass="ITAdminController" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="fOf-mP-7TZ">
+                        <rect key="frame" x="0.0" y="20" width="1112" height="50"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="JHY-7y-fPU" kind="relationship" relationship="rootViewController" id="WKf-Ft-kAX"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="8aE-p4-FEG" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1553" y="286"/>
+        </scene>
+        <!--老师管理器-->
         <scene sceneID="7RD-ue-3ey">
             <objects>
-                <tabBarController id="JHY-7y-fPU" sceneMemberID="viewController">
+                <tabBarController id="JHY-7y-fPU" customClass="ITTeacherController" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" title="老师管理器" id="wh4-hO-1WR"/>
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="kmI-hK-ana">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="49"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -211,7 +213,7 @@
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="PRo-aF-UiN" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1563" y="273"/>
+            <point key="canvasLocation" x="2269" y="273"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="by5-ac-kSa">
