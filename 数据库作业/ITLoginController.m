@@ -38,7 +38,12 @@
     NSString *password = @"123456";
     if ([admin isEqualToString:self.userTextField.text] && [password isEqualToString:self.passwordTextField.text]) {
         // FIXME: 导航控制器与底边控制器逻辑还是混乱，不知道如何弄出来
-        [self performSegueWithIdentifier:@"toAdmin" sender:nil];
+        [self performSegueWithIdentifier:@"toTeacher" sender:nil];
+    } else {
+        UIAlertController *alertController = [UIAlertController alertControllerWithTitle:@"登录失败" message:@"请检查一下输入的账号和密码" preferredStyle:UIAlertControllerStyleAlert];
+        UIAlertAction *confirmAction = [UIAlertAction actionWithTitle:@"去检查" style:UIAlertActionStyleDefault handler:nil];
+        [alertController addAction:confirmAction];
+        [self presentViewController:alertController animated:YES completion:nil];
     }
 }
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
