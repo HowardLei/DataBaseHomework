@@ -161,7 +161,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="yCa-vW-RmU" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2996" y="617"/>
+            <point key="canvasLocation" x="2948" y="286"/>
         </scene>
         <!--首页-->
         <scene sceneID="1AI-TR-tib">
@@ -178,7 +178,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="5J7-Gz-piX" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2981" y="-196"/>
+            <point key="canvasLocation" x="2948" y="-414"/>
         </scene>
         <!--Admin Controller-->
         <scene sceneID="d1m-q0-Cyc">
@@ -200,20 +200,27 @@
         <scene sceneID="7RD-ue-3ey">
             <objects>
                 <tabBarController id="JHY-7y-fPU" customClass="ITTeacherController" sceneMemberID="viewController">
-                    <navigationItem key="navigationItem" title="老师管理器" id="wh4-hO-1WR"/>
+                    <navigationItem key="navigationItem" title="老师管理器" id="wh4-hO-1WR">
+                        <barButtonItem key="leftBarButtonItem" title="注销" id="Z1d-pb-Z4F">
+                            <connections>
+                                <action selector="logout:" destination="JHY-7y-fPU" id="fvH-b2-kO0"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="kmI-hK-ana">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="49"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </tabBar>
                     <connections>
+                        <outlet property="logoutButton" destination="Z1d-pb-Z4F" id="lus-MX-sVJ"/>
                         <segue destination="DXb-L8-dC6" kind="relationship" relationship="viewControllers" id="s7x-01-9gC"/>
                         <segue destination="jO8-sb-JOp" kind="relationship" relationship="viewControllers" id="zkl-nR-Ohr"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="PRo-aF-UiN" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2269" y="273"/>
+            <point key="canvasLocation" x="2262" y="-414"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="by5-ac-kSa">

@@ -7,6 +7,7 @@
 //
 
 #import "ITLoginController.h"
+#import "ITAdminController.h"
 #import "ITTeacherController.h"
 @interface ITLoginController () <UITextFieldDelegate>
 @property (weak, nonatomic) IBOutlet UITextField *userTextField;
@@ -23,6 +24,9 @@
     [center addObserver:self selector:@selector(allHaveContents) name:UITextFieldTextDidChangeNotification object:self.userTextField];
     [center addObserver:self selector:@selector(allHaveContents) name:UITextFieldTextDidChangeNotification object:self.passwordTextField];
 }
+- (void)dealloc {
+    [NSNotificationCenter.defaultCenter removeObserver:self];
+}
 // MARK: - 管理按钮的事件
 - (void)allHaveContents {
     self.loginButton.enabled = (![self.userTextField.text isEqualToString:@""] && ![self.passwordTextField.text isEqualToString:@""]);
@@ -37,8 +41,8 @@
     NSString *admin = @"admin";
     NSString *password = @"123456";
     if ([admin isEqualToString:self.userTextField.text] && [password isEqualToString:self.passwordTextField.text]) {
-        // FIXME: 导航控制器与底边控制器逻辑还是混乱，不知道如何弄出来
-        [self performSegueWithIdentifier:@"toTeacher" sender:nil];
+        // 将当前控制器的值传给 ITTeacherController 的 viewController 属性当中
+        [self performSegueWithIdentifier:@"toAdmin" sender:self];
     } else {
         UIAlertController *alertController = [UIAlertController alertControllerWithTitle:@"登录失败" message:@"请检查一下输入的账号和密码" preferredStyle:UIAlertControllerStyleAlert];
         UIAlertAction *confirmAction = [UIAlertAction actionWithTitle:@"去检查" style:UIAlertActionStyleDefault handler:nil];
@@ -46,13 +50,12 @@
         [self presentViewController:alertController animated:YES completion:nil];
     }
 }
+// MARK: - 处理 segue 的操作
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    if ([segue.identifier isEqualToString:@"toTeacher"]) {
-        ITTeacherController *teacherController = segue.destinationViewController;
-        teacherController.navigationItem.title = @"123";
+    if ([segue.identifier isEqualToString:@"toAdmin"]) {
+        ITAdminController *adminController = segue.destinationViewController;
+        id teacherController = adminController.topViewController;
+        [teacherController setViewController:self];
     }
-}
-- (void)dealloc {
-    [NSNotificationCenter.defaultCenter removeObserver:self];
 }
 @end

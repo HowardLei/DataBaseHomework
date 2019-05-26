@@ -7,9 +7,9 @@
 //
 
 #import "ITTeacherController.h"
-
+#import "ITAdminController.h"
 @interface ITTeacherController ()
-
+@property (weak, nonatomic) IBOutlet UIBarButtonItem *logoutButton;
 @end
 
 @implementation ITTeacherController
@@ -17,8 +17,13 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
-    self.navigationController.navigationItem.title = @"123";
-    self.view.backgroundColor = [UIColor whiteColor];
+}
+// MARK: - 管理按钮事件
+// FIXME: 注销功能未能实现
+- (IBAction)logout:(UIBarButtonItem *)sender {
+    NSLog(@"%s", __FUNCTION__);
+    id controller = self.navigationController;
+    [[controller navigationController] popViewControllerAnimated:YES];
 }
 
 @end
