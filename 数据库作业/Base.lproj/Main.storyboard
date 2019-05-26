@@ -147,7 +147,7 @@
             </objects>
             <point key="canvasLocation" x="1552.8776978417266" y="-414.38848920863313"/>
         </scene>
-        <!--Item 2-->
+        <!--设置-->
         <scene sceneID="v70-ws-6Is">
             <objects>
                 <viewController id="jO8-sb-JOp" sceneMemberID="viewController">
@@ -157,7 +157,7 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="hE7-IV-viO"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Item 2" id="EQ0-aM-VkG"/>
+                    <tabBarItem key="tabBarItem" title="设置" id="EQ0-aM-VkG"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="yCa-vW-RmU" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
