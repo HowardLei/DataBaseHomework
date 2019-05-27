@@ -8,6 +8,8 @@
 
 #import "ITTeacherController.h"
 #import "ITAdminController.h"
+#import "ITLoginController.h"
+#import "AppDelegate.h"
 @interface ITTeacherController ()
 @property (weak, nonatomic) IBOutlet UIBarButtonItem *logoutButton;
 @end
@@ -19,11 +21,10 @@
     // Do any additional setup after loading the view.
 }
 // MARK: - 管理按钮事件
-// FIXME: 注销功能未能实现
 - (IBAction)logout:(UIBarButtonItem *)sender {
     NSLog(@"%s", __FUNCTION__);
-    id controller = self.navigationController;
-    [[controller navigationController] popViewControllerAnimated:YES];
+    AppDelegate *appDelegate = (AppDelegate *)UIApplication.sharedApplication.delegate;
+    appDelegate.window.rootViewController = [[UINavigationController alloc] initWithRootViewController:self.viewController];
 }
 
 @end

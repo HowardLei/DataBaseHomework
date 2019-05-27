@@ -54,8 +54,8 @@
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
     if ([segue.identifier isEqualToString:@"toAdmin"]) {
         ITAdminController *adminController = segue.destinationViewController;
-        id teacherController = adminController.topViewController;
-        [teacherController setViewController:self];
+        ITTeacherController *teacherController = (ITTeacherController *)adminController.topViewController;
+        teacherController.viewController = self;
     }
 }
 @end
