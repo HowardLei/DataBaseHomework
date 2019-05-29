@@ -222,10 +222,10 @@
             </objects>
             <point key="canvasLocation" x="2262" y="-414"/>
         </scene>
-        <!--Navigation Controller-->
+        <!--Admin Login Controller-->
         <scene sceneID="by5-ac-kSa">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="RiW-L8-Ula" sceneMemberID="viewController">
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="RiW-L8-Ula" customClass="ITAdminLoginController" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="ZPP-wR-54B">
                         <rect key="frame" x="0.0" y="20" width="1112" height="50"/>

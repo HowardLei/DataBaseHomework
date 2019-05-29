@@ -7,8 +7,8 @@
 //
 
 #import "ITRegisterController.h"
-
-@interface ITRegisterController () <UITextFieldDelegate, UIPickerViewDataSource, UIPickerViewDelegate>
+#import "ITLoginController.h"
+@interface ITRegisterController () <UITextFieldDelegate, UIPickerViewDataSource, UIPickerViewDelegate, UINavigationControllerDelegate>
 @property (weak, nonatomic) IBOutlet UITextField *createUserTextField;
 @property (weak, nonatomic) IBOutlet UITextField *createPasswordTextField;
 @property (weak, nonatomic) IBOutlet UITextField *againPasswordTextField;
@@ -34,6 +34,8 @@ typedef NS_ENUM(NSUInteger, ITUser) {
 }
 // 当点击返回的时候，通过这个方法进行方法回调
 // FIXME: 在视图即将消失的时候，if 当中的代码块能够执行，但是没有任何效果出现。
+// @Reason: 当点击返回按钮的时候，该控制器已经离开了应用程序代理窗口控制的层级了，只不过他里面的 view 还没有被移除。
+// 解决方案：需要在控制器还在应用程序代理窗口的控制层级的时候进行数据检测，看是否需要保存数据。
 // https://www.jianshu.com/p/90a104ac6633
 - (void)viewWillDisappear:(BOOL)animated {
     [super viewWillDisappear:animated];

@@ -17,6 +17,7 @@
 		6395F036228FFEE0007EA3EB /* ITRegisterController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6395F035228FFEE0007EA3EB /* ITRegisterController.m */; };
 		6395F039229001EC007EA3EB /* ITTeacherController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6395F038229001EC007EA3EB /* ITTeacherController.m */; };
 		6395F03C22900206007EA3EB /* ITStudentController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6395F03B22900206007EA3EB /* ITStudentController.m */; };
+		63EE3D44229EE7A30061614E /* ITAdminLoginController.m in Sources */ = {isa = PBXBuildFile; fileRef = 63EE3D43229EE7A30061614E /* ITAdminLoginController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -38,6 +39,8 @@
 		6395F038229001EC007EA3EB /* ITTeacherController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ITTeacherController.m; sourceTree = "<group>"; };
 		6395F03A22900206007EA3EB /* ITStudentController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ITStudentController.h; sourceTree = "<group>"; };
 		6395F03B22900206007EA3EB /* ITStudentController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ITStudentController.m; sourceTree = "<group>"; };
+		63EE3D42229EE7A30061614E /* ITAdminLoginController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ITAdminLoginController.h; sourceTree = "<group>"; };
+		63EE3D43229EE7A30061614E /* ITAdminLoginController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ITAdminLoginController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -92,6 +95,8 @@
 				6395F03B22900206007EA3EB /* ITStudentController.m */,
 				18B5E429229965B700CF4781 /* ITAdminController.h */,
 				18B5E42A229965B700CF4781 /* ITAdminController.m */,
+				63EE3D42229EE7A30061614E /* ITAdminLoginController.h */,
+				63EE3D43229EE7A30061614E /* ITAdminLoginController.m */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -208,6 +213,7 @@
 				6395F033228FFBF8007EA3EB /* ITLoginController.m in Sources */,
 				6395F03C22900206007EA3EB /* ITStudentController.m in Sources */,
 				6395F036228FFEE0007EA3EB /* ITRegisterController.m in Sources */,
+				63EE3D44229EE7A30061614E /* ITAdminLoginController.m in Sources */,
 				18B5E42B229965B700CF4781 /* ITAdminController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

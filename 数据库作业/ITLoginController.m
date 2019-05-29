@@ -17,7 +17,7 @@
 @end
 
 @implementation ITLoginController
-// MARK: - 视图的生命周期
+// MARK: - View's life cycle
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
@@ -25,23 +25,10 @@
     [center addObserver:self selector:@selector(allHaveContents) name:UITextFieldTextDidChangeNotification object:self.userTextField];
     [center addObserver:self selector:@selector(allHaveContents) name:UITextFieldTextDidChangeNotification object:self.passwordTextField];
 }
-
 - (void)dealloc {
     [NSNotificationCenter.defaultCenter removeObserver:self];
 }
-
-// MARK: - 管理按钮的事件
-- (void)allHaveContents {
-    self.loginButton.enabled = (![self.userTextField.text isEqualToString:@""] && ![self.passwordTextField.text isEqualToString:@""]);
-}
-
-// MARK: - 管理文本框的事件
-- (BOOL)textFieldShouldReturn:(UITextField *)textField {
-    [self loginIn:self.loginButton];
-    return YES;
-}
-
-// MARK: - 登录按钮
+// MARK: - Button event
 - (IBAction)loginIn:(UIButton *)sender {
     NSString *admin = @"admin";
     NSString *password = @"123456";
@@ -55,8 +42,16 @@
         [self presentViewController:alertController animated:YES completion:nil];
     }
 }
-
-// MARK: - 处理 segue 的操作
+// 监听按钮通知当中的方法
+- (void)allHaveContents {
+    self.loginButton.enabled = (![self.userTextField.text isEqualToString:@""] && ![self.passwordTextField.text isEqualToString:@""]);
+}
+// MARK: - Text field delegate
+- (BOOL)textFieldShouldReturn:(UITextField *)textField {
+    [self loginIn:self.loginButton];
+    return YES;
+}
+// MARK: - Segue operations
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
     if ([segue.identifier isEqualToString:@"toAdmin"]) {
         ITAdminController *adminController = segue.destinationViewController;
