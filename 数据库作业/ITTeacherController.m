@@ -22,7 +22,6 @@
 
 // MARK: - 管理按钮事件
 - (IBAction)logout:(UIBarButtonItem *)sender {
-    NSLog(@"%s", __FUNCTION__);
     AppDelegate *appDelegate = (AppDelegate *) UIApplication.sharedApplication.delegate;
     appDelegate.window.rootViewController = [[UINavigationController alloc] initWithRootViewController:self.viewController];
 }
