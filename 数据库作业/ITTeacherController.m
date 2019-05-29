@@ -10,7 +10,7 @@
 #import "AppDelegate.h"
 
 @interface ITTeacherController ()
-@property(weak, nonatomic) IBOutlet UIBarButtonItem *logoutButton;
+@property (weak, nonatomic) IBOutlet UIBarButtonItem *logoutButton;
 @end
 
 @implementation ITTeacherController
