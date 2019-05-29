@@ -73,4 +73,5 @@ typedef NS_ENUM(NSUInteger, ITUser) {
 - (void)pickerView:(UIPickerView *)pickerView didSelectRow:(NSInteger)row inComponent:(NSInteger)component {
     self.userModeView.text = [self pickerView:pickerView titleForRow:row forComponent:component];
 }
+
 @end
