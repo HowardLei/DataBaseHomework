@@ -11,7 +11,7 @@
 NS_ASSUME_NONNULL_BEGIN
 
 @interface ITTeacherController : UITabBarController
-@property (nonatomic, strong) id viewController;
+@property(nonatomic, strong) id viewController;
 @end
 
 NS_ASSUME_NONNULL_END

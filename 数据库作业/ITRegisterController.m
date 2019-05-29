@@ -35,24 +35,30 @@ typedef NS_ENUM(NSUInteger, ITUser) {
     userPickerView.delegate = self;
     self.userModeView.inputView = userPickerView;
 }
+
 // 当点击返回的时候，通过这个方法进行方法回调
 - (void)viewWillDisappear:(BOOL)animated {
     [super viewWillDisappear:animated];
 }
+
 - (void)dealloc {
     [NSNotificationCenter.defaultCenter removeObserver:self];
 }
+
 // MARK: - 管理按钮的事件
 - (void)canUploadNewData {
     self.uploadButton.enabled = (![self.createUserTextField.text isEqualToString:@""] && ![self.createPasswordTextField.text isEqualToString:@""] && ![self.againPasswordTextField.text isEqualToString:@""]) && [self.userModeView.text isEqualToString:@""];
 }
+
 // MARK: - Picker view data source
 - (NSInteger)pickerView:(nonnull UIPickerView *)pickerView numberOfRowsInComponent:(NSInteger)component {
     return 2;
 }
+
 - (NSInteger)numberOfComponentsInPickerView:(nonnull UIPickerView *)pickerView {
     return 1;
 }
+
 // MARK: - Picker view delegate
 - (NSString *)pickerView:(UIPickerView *)pickerView titleForRow:(NSInteger)row forComponent:(NSInteger)component {
     switch (row) {
@@ -63,6 +69,7 @@ typedef NS_ENUM(NSUInteger, ITUser) {
     }
     return nil;
 }
+
 - (void)pickerView:(UIPickerView *)pickerView didSelectRow:(NSInteger)row inComponent:(NSInteger)component {
     self.userModeView.text = [self pickerView:pickerView titleForRow:row forComponent:component];
 }

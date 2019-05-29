@@ -9,6 +9,7 @@
 #import "ITLoginController.h"
 #import "ITAdminController.h"
 #import "ITTeacherController.h"
+
 @interface ITLoginController () <UITextFieldDelegate>
 @property (weak, nonatomic) IBOutlet UITextField *userTextField;
 @property (weak, nonatomic) IBOutlet UITextField *passwordTextField;
@@ -24,18 +25,22 @@
     [center addObserver:self selector:@selector(allHaveContents) name:UITextFieldTextDidChangeNotification object:self.userTextField];
     [center addObserver:self selector:@selector(allHaveContents) name:UITextFieldTextDidChangeNotification object:self.passwordTextField];
 }
+
 - (void)dealloc {
     [NSNotificationCenter.defaultCenter removeObserver:self];
 }
+
 // MARK: - 管理按钮的事件
 - (void)allHaveContents {
     self.loginButton.enabled = (![self.userTextField.text isEqualToString:@""] && ![self.passwordTextField.text isEqualToString:@""]);
 }
+
 // MARK: - 管理文本框的事件
 - (BOOL)textFieldShouldReturn:(UITextField *)textField {
     [self loginIn:self.loginButton];
     return YES;
 }
+
 // MARK: - 登录按钮
 - (IBAction)loginIn:(UIButton *)sender {
     NSString *admin = @"admin";
@@ -50,11 +55,12 @@
         [self presentViewController:alertController animated:YES completion:nil];
     }
 }
+
 // MARK: - 处理 segue 的操作
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
     if ([segue.identifier isEqualToString:@"toAdmin"]) {
         ITAdminController *adminController = segue.destinationViewController;
-        ITTeacherController *teacherController = (ITTeacherController *)adminController.topViewController;
+        ITTeacherController *teacherController = (ITTeacherController *) adminController.topViewController;
         teacherController.viewController = self;
     }
 }
