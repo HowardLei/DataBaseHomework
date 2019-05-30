@@ -28,7 +28,7 @@
 - (void)dealloc {
     [NSNotificationCenter.defaultCenter removeObserver:self];
 }
-// MARK: - Button event
+// MARK: - Button events
 - (IBAction)loginIn:(UIButton *)sender {
     NSString *admin = @"admin";
     NSString *password = @"123456";

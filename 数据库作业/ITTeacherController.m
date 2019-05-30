@@ -20,7 +20,7 @@
     // Do any additional setup after loading the view.
 }
 
-// MARK: - 管理按钮事件
+// MARK: - Button events
 - (IBAction)logout:(UIBarButtonItem *)sender {
     AppDelegate *appDelegate = (AppDelegate *) UIApplication.sharedApplication.delegate;
     appDelegate.window.rootViewController = [[UINavigationController alloc] initWithRootViewController:self.viewController];

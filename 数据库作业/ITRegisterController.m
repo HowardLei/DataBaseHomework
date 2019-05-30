@@ -53,7 +53,7 @@ typedef NS_ENUM(NSUInteger, ITUser) {
 - (void)dealloc {
     [NSNotificationCenter.defaultCenter removeObserver:self];
 }
-// MARK: - Button event
+// MARK: - Button events
 - (void)canUploadNewData {
     self.uploadButton.enabled = (![self.createUserTextField.text isEqualToString:@""] && ![self.createPasswordTextField.text isEqualToString:@""] && ![self.againPasswordTextField.text isEqualToString:@""] && [self.userModeView.text isEqualToString:@""]);
 }
