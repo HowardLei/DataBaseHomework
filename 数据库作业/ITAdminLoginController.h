@@ -14,4 +14,8 @@ NS_ASSUME_NONNULL_BEGIN
 
 @end
 
+@protocol ITAdminLoginControllerDelegate <NSObject>
+- (void)canControllerPop;
+@end
+
 NS_ASSUME_NONNULL_END
