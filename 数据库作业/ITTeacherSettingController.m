@@ -13,7 +13,7 @@
 @end
 
 @implementation ITTeacherSettingController
-
+// MARK: - View's life cycle
 - (void)viewDidLoad {
     [super viewDidLoad];
 }
