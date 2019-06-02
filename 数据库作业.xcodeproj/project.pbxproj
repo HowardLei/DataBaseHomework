@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		18B5E42B229965B700CF4781 /* ITAdminController.m in Sources */ = {isa = PBXBuildFile; fileRef = 18B5E42A229965B700CF4781 /* ITAdminController.m */; };
 		18B5E42E22996D9A00CF4781 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 18B5E42D22996D9A00CF4781 /* Assets.xcassets */; };
+		6353A2BF22A2717700691539 /* ITTeacherSettingController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6353A2BE22A2717700691539 /* ITTeacherSettingController.m */; };
+		6353A2C222A277A900691539 /* ITTeacherWelcomeController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6353A2C122A277A900691539 /* ITTeacherWelcomeController.m */; };
 		6395F018228FF13D007EA3EB /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 6395F017228FF13D007EA3EB /* AppDelegate.m */; };
 		6395F01E228FF13D007EA3EB /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6395F01C228FF13D007EA3EB /* Main.storyboard */; };
 		6395F023228FF13E007EA3EB /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6395F021228FF13E007EA3EB /* LaunchScreen.storyboard */; };
@@ -24,6 +26,10 @@
 		18B5E429229965B700CF4781 /* ITAdminController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ITAdminController.h; sourceTree = "<group>"; };
 		18B5E42A229965B700CF4781 /* ITAdminController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ITAdminController.m; sourceTree = "<group>"; };
 		18B5E42D22996D9A00CF4781 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		6353A2BD22A2717700691539 /* ITTeacherSettingController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ITTeacherSettingController.h; sourceTree = "<group>"; };
+		6353A2BE22A2717700691539 /* ITTeacherSettingController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ITTeacherSettingController.m; sourceTree = "<group>"; };
+		6353A2C022A277A900691539 /* ITTeacherWelcomeController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ITTeacherWelcomeController.h; sourceTree = "<group>"; };
+		6353A2C122A277A900691539 /* ITTeacherWelcomeController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ITTeacherWelcomeController.m; sourceTree = "<group>"; };
 		6395F013228FF13D007EA3EB /* 数据库作业.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "数据库作业.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		6395F016228FF13D007EA3EB /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		6395F017228FF13D007EA3EB /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -97,6 +103,10 @@
 				18B5E42A229965B700CF4781 /* ITAdminController.m */,
 				63EE3D42229EE7A30061614E /* ITAdminLoginController.h */,
 				63EE3D43229EE7A30061614E /* ITAdminLoginController.m */,
+				6353A2BD22A2717700691539 /* ITTeacherSettingController.h */,
+				6353A2BE22A2717700691539 /* ITTeacherSettingController.m */,
+				6353A2C022A277A900691539 /* ITTeacherWelcomeController.h */,
+				6353A2C122A277A900691539 /* ITTeacherWelcomeController.m */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -215,6 +225,8 @@
 				6395F036228FFEE0007EA3EB /* ITRegisterController.m in Sources */,
 				63EE3D44229EE7A30061614E /* ITAdminLoginController.m in Sources */,
 				18B5E42B229965B700CF4781 /* ITAdminController.m in Sources */,
+				6353A2C222A277A900691539 /* ITTeacherWelcomeController.m in Sources */,
+				6353A2BF22A2717700691539 /* ITTeacherSettingController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

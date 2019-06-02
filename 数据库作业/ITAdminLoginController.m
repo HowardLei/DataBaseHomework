@@ -13,7 +13,7 @@
 @end
 
 @implementation ITAdminLoginController
-
+// MARK: - View's life cycle
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
