@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		18B19F5622A3B48700943FD5 /* Model.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 18B19F5422A3B48700943FD5 /* Model.xcdatamodeld */; };
 		18B5E42B229965B700CF4781 /* ITAdminController.m in Sources */ = {isa = PBXBuildFile; fileRef = 18B5E42A229965B700CF4781 /* ITAdminController.m */; };
 		18B5E42E22996D9A00CF4781 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 18B5E42D22996D9A00CF4781 /* Assets.xcassets */; };
 		6353A2BF22A2717700691539 /* ITTeacherSettingController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6353A2BE22A2717700691539 /* ITTeacherSettingController.m */; };
@@ -23,6 +24,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		18B19F5522A3B48700943FD5 /* Model.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Model.xcdatamodel; sourceTree = "<group>"; };
 		18B5E429229965B700CF4781 /* ITAdminController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ITAdminController.h; sourceTree = "<group>"; };
 		18B5E42A229965B700CF4781 /* ITAdminController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ITAdminController.m; sourceTree = "<group>"; };
 		18B5E42D22996D9A00CF4781 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -123,6 +125,7 @@
 		6395F02E228FF731007EA3EB /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				18B19F5422A3B48700943FD5 /* Model.xcdatamodeld */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -178,6 +181,7 @@
 				TargetAttributes = {
 					6395F012228FF13D007EA3EB = {
 						CreatedOnToolsVersion = 10.2.1;
+						LastSwiftMigration = 1020;
 					};
 				};
 			};
@@ -226,6 +230,7 @@
 				63EE3D44229EE7A30061614E /* ITAdminLoginController.m in Sources */,
 				18B5E42B229965B700CF4781 /* ITAdminController.m in Sources */,
 				6353A2C222A277A900691539 /* ITTeacherWelcomeController.m in Sources */,
+				18B19F5622A3B48700943FD5 /* Model.xcdatamodeld in Sources */,
 				6353A2BF22A2717700691539 /* ITTeacherSettingController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -368,6 +373,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = V9C6R6LR63;
 				INFOPLIST_FILE = "数据库作业/Info.plist";
@@ -377,6 +383,9 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "Anonymous.-----";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "数据库作业-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 2;
 			};
 			name = Debug;
@@ -385,6 +394,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = V9C6R6LR63;
 				INFOPLIST_FILE = "数据库作业/Info.plist";
@@ -394,6 +404,8 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "Anonymous.-----";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "数据库作业-Bridging-Header.h";
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 2;
 			};
 			name = Release;
@@ -420,6 +432,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		18B19F5422A3B48700943FD5 /* Model.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				18B19F5522A3B48700943FD5 /* Model.xcdatamodel */,
+			);
+			currentVersion = 18B19F5522A3B48700943FD5 /* Model.xcdatamodel */;
+			path = Model.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = 6395F00B228FF13D007EA3EB /* Project object */;
 }

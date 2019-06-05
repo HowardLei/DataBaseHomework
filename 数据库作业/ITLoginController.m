@@ -44,7 +44,7 @@
 }
 // 监听按钮通知当中的方法
 - (void)allHaveContents {
-    self.loginButton.enabled = (![self.userTextField.text isEqualToString:@""] && ![self.passwordTextField.text isEqualToString:@""]);
+    self.loginButton.enabled = (self.userTextField.text.length && self.passwordTextField.text.length);
 }
 // MARK: - Text field delegate
 - (BOOL)textFieldShouldReturn:(UITextField *)textField {
