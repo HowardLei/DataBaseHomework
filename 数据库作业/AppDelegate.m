@@ -34,7 +34,49 @@
 - (void)applicationWillTerminate:(UIApplication *)application {
     // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
 }
+@synthesize applicationDocumentsDirectory = _applicationDocumentsDirectory;
+- (NSURL *)applicationDocumentsDirectory {
+    return [NSFileManager.defaultManager URLsForDirectory:NSDocumentDirectory inDomains:NSUserDomainMask].lastObject;
+}
+- (NSManagedObjectModel *)managedObjectModel {
+    if (_managedObjectModel == nil) {
+        // FIXME: 这个 URL 不知道为啥，怎么都获得不了
+        NSURL *url = [NSBundle.mainBundle URLForResource:@"UsersModel" withExtension:@"momd"];
+        _managedObjectModel = [[NSManagedObjectModel alloc] initWithContentsOfURL:url];
+    }
+    return _managedObjectModel;
+}
+- (NSPersistentStoreCoordinator *)coordinator {
+    if (_coordinator == nil) {
+        _coordinator = [[NSPersistentStoreCoordinator alloc] initWithManagedObjectModel:self.managedObjectModel];
+        NSURL *storeURL = [self.applicationDocumentsDirectory URLByAppendingPathComponent:@"UserModel.sqlite"];
+        NSError *error = nil;
+        if (![_coordinator addPersistentStoreWithType:NSSQLiteStoreType configuration:nil URL:storeURL options:nil error:&error]) {
+            NSLog(@"设置持久化存储器失败:%@, %@", error, error.userInfo);
+            abort();
+        }
+    }
+    return _coordinator;
+}
+- (NSManagedObjectContext *)managedObjectContext {
+    if (_managedObjectContext == nil) {
+        NSPersistentStoreCoordinator *coordinator = self.coordinator;
+        if (!coordinator) {
+            return nil;
+        }
+        _managedObjectContext = [[NSManagedObjectContext alloc] initWithConcurrencyType:NSMainQueueConcurrencyType];
+        _managedObjectContext.persistentStoreCoordinator = coordinator;
+    }
+    return _managedObjectContext;
+}
 - (void)saveContext {
-    
+    NSManagedObjectContext *managedObjectContext = self.managedObjectContext;
+    if (managedObjectContext) {
+        NSError *error = nil;
+        if (managedObjectContext.hasChanges && ![managedObjectContext save:&error]) {
+            NSLog(@"保存出现错误:%@, %@", error, error.userInfo);
+            abort();
+        }
+    }
 }
 @end

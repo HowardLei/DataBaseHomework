@@ -9,15 +9,22 @@
 #import "ITLoginController.h"
 #import "ITAdminController.h"
 #import "ITTeacherController.h"
+#import "AppDelegate.h"
+#import "Users+CoreDataClass.h"
 
 @interface ITLoginController () <UITextFieldDelegate>
 @property (weak, nonatomic) IBOutlet UITextField *userTextField;
 @property (weak, nonatomic) IBOutlet UITextField *passwordTextField;
 @property (weak, nonatomic) IBOutlet UIButton *loginButton;
+@property (nonatomic, weak) AppDelegate *appDelegate;
 @end
 
 @implementation ITLoginController
 // MARK: - View's life cycle
+- (void)viewWillAppear:(BOOL)animated {
+    [super viewWillAppear:animated];
+    [self initAdmin];
+}
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
@@ -59,5 +66,23 @@
         teacherController.viewController = self;
     }
 }
-
+// MARK: - Core Data initialize
+- (void)initAdmin {
+    NSFetchRequest *fetchRequest = [[NSFetchRequest alloc] init];
+    NSEntityDescription *entity = [NSEntityDescription entityForName:NSStringFromClass(Users.class) inManagedObjectContext:self.appDelegate.managedObjectContext];
+    fetchRequest.entity = entity;
+    NSError *error = nil;
+    NSMutableArray *fetchedObjects = [[self.appDelegate.managedObjectContext executeFetchRequest:fetchRequest error:&error] mutableCopy];
+    // 检查数据管理员是否存在，如果不存在就添加。
+    if (fetchedObjects == nil) {
+        NSLog(@"错误信息：%@, %@", error, error.userInfo);
+    }
+}
+// MARK: - Lazy loading properties
+- (AppDelegate *)appDelegate {
+    if (_appDelegate == nil) {
+        _appDelegate = (AppDelegate *)UIApplication.sharedApplication.delegate;
+    }
+    return _appDelegate;
+}
 @end

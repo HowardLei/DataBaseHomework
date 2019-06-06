@@ -2,11 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="17b0b7a7-b7bf-4819-9d0d-892b0f312883" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/数据库作业/Model.xcdatamodeld/Model.xcdatamodel/contents" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/数据库作业.xcodeproj/project.pbxproj" beforeDir="false" afterPath="$PROJECT_DIR$/数据库作业.xcodeproj/project.pbxproj" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/数据库作业.xcodeproj/project.xcworkspace/xcuserdata/apple.xcuserdatad/UserInterfaceState.xcuserstate" beforeDir="false" afterPath="$PROJECT_DIR$/数据库作业.xcodeproj/project.xcworkspace/xcuserdata/apple.xcuserdatad/UserInterfaceState.xcuserstate" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/数据库作业/Base.lproj/Main.storyboard" beforeDir="false" afterPath="$PROJECT_DIR$/数据库作业/Base.lproj/Main.storyboard" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/数据库作业/AppDelegate.m" beforeDir="false" afterPath="$PROJECT_DIR$/数据库作业/AppDelegate.m" afterDir="false" />
     </list>
     <ignored path="$USER_HOME$/Library/Caches/AppCode2019.1/DerivedData/数据库作业-dpqhhpjctmzwdxeogbjepqvnqbxx/Build/Intermediates.noindex/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -17,7 +15,39 @@
   </component>
   <component name="ExecutionTargetManager" SELECTED_TARGET="iphonesimulator_AC39922A-9D7A-4532-AC43-4F27B58C538E" />
   <component name="FileEditorManager">
-    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300" />
+    <leaf>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/数据库作业/ITLoginController.m">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="184">
+              <caret line="8" column="6" selection-start-line="8" selection-start-column="6" selection-end-line="8" selection-end-column="6" />
+              <folding>
+                <element signature="e#129#158#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/数据库作业/AppDelegate.m">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="460">
+              <caret line="41" selection-start-line="41" selection-end-line="41" />
+              <folding>
+                <element signature="e#0#2#0" />
+                <element signature="e#148#179#0" />
+                <element signature="e#209#403#0" />
+                <element signature="e#404#910#0" />
+                <element signature="e#911#1334#0" />
+                <element signature="e#1335#1558#0" />
+                <element signature="e#1559#1817#0" />
+                <element signature="e#1818#2008#0" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -27,6 +57,8 @@
       <list>
         <option value="$PROJECT_DIR$/数据库作业/ITRegisterController.m" />
         <option value="$PROJECT_DIR$/数据库作业/ITAdminLoginController.m" />
+        <option value="$PROJECT_DIR$/数据库作业/Model.xcdatamodeld/Model.xcdatamodel/contents" />
+        <option value="$PROJECT_DIR$/数据库作业/AppDelegate.m" />
       </list>
     </option>
   </component>
@@ -43,8 +75,8 @@
     </option>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="1098" />
-    <option name="y" value="327" />
+    <option name="x" value="878" />
+    <option name="y" value="581" />
     <option name="width" value="1532" />
     <option name="height" value="1095" />
   </component>
@@ -53,15 +85,62 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="ProjectPane" />
       <pane id="Cidr.FilesView" />
       <pane id="Scope" />
+      <pane id="ProjectPane">
+        <subPane>
+          <expand>
+            <path>
+              <item name="" type="efc3779f:XcodeRootNode" />
+              <item name="数据库作业" type="1d218c8b:XcodeProjectNode" />
+            </path>
+            <path>
+              <item name="" type="efc3779f:XcodeRootNode" />
+              <item name="数据库作业" type="1d218c8b:XcodeProjectNode" />
+              <item name="数据库作业" type="fcab9f18:XcodeViewNode" />
+            </path>
+            <path>
+              <item name="" type="efc3779f:XcodeRootNode" />
+              <item name="数据库作业" type="1d218c8b:XcodeProjectNode" />
+              <item name="数据库作业" type="fcab9f18:XcodeViewNode" />
+              <item name="Controller" type="fcab9f18:XcodeViewNode" />
+            </path>
+            <path>
+              <item name="" type="efc3779f:XcodeRootNode" />
+              <item name="数据库作业" type="1d218c8b:XcodeProjectNode" />
+              <item name="数据库作业" type="fcab9f18:XcodeViewNode" />
+              <item name="Databases" type="fcab9f18:XcodeViewNode" />
+            </path>
+            <path>
+              <item name="" type="efc3779f:XcodeRootNode" />
+              <item name="数据库作业" type="1d218c8b:XcodeProjectNode" />
+              <item name="数据库作业" type="fcab9f18:XcodeViewNode" />
+              <item name="Databases" type="fcab9f18:XcodeViewNode" />
+              <item name="Model.xcdatamodel" type="fcab9f18:XcodeViewNode" />
+            </path>
+            <path>
+              <item name="" type="efc3779f:XcodeRootNode" />
+              <item name="数据库作业" type="1d218c8b:XcodeProjectNode" />
+              <item name="数据库作业" type="fcab9f18:XcodeViewNode" />
+              <item name="Model" type="fcab9f18:XcodeViewNode" />
+            </path>
+            <path>
+              <item name="" type="efc3779f:XcodeRootNode" />
+              <item name="数据库作业" type="1d218c8b:XcodeProjectNode" />
+              <item name="数据库作业" type="fcab9f18:XcodeViewNode" />
+              <item name="Other" type="fcab9f18:XcodeViewNode" />
+            </path>
+          </expand>
+          <select />
+        </subPane>
+      </pane>
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="ASKED_SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/数据库作业.xcodeproj" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
     <property name="settings.editor.selected.configurable" value="preferences.lookFeel" />
@@ -101,18 +180,19 @@
       <updated>1559208575566</updated>
       <workItem from="1559208578755" duration="273000" />
       <workItem from="1559567124756" duration="69000" />
+      <workItem from="1559815955426" duration="322000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="342000" />
+    <option name="totallyTimeSpent" value="664000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="1098" y="327" width="1532" height="1095" extended-state="0" />
+    <frame x="878" y="581" width="1532" height="1095" extended-state="0" />
     <layout>
       <window_info id="Designer" order="0" />
       <window_info id="Favorites" order="1" side_tool="true" />
-      <window_info active="true" content_ui="combo" id="Project" order="2" visible="true" weight="0.24832214" />
+      <window_info active="true" content_ui="combo" id="Project" order="2" visible="true" weight="0.25167784" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
       <window_info anchor="bottom" id="Run" order="2" />
@@ -195,6 +275,13 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/数据库作业/ITRegisterController.h">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret column="2" lean-forward="true" selection-start-column="2" selection-end-column="2" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/数据库作业/ITLoginController.m">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="184">
@@ -205,10 +292,27 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/数据库作业/ITRegisterController.h">
+    <entry file="file://$PROJECT_DIR$/数据库作业/Model.xcdatamodeld/Model.xcdatamodel/contents">
       <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret column="2" lean-forward="true" selection-start-column="2" selection-end-column="2" />
+        <state relative-caret-position="161">
+          <caret line="5" column="89" selection-start-line="5" selection-start-column="89" selection-end-line="5" selection-end-column="89" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/数据库作业/AppDelegate.m">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="460">
+          <caret line="41" selection-start-line="41" selection-end-line="41" />
+          <folding>
+            <element signature="e#0#2#0" />
+            <element signature="e#148#179#0" />
+            <element signature="e#209#403#0" />
+            <element signature="e#404#910#0" />
+            <element signature="e#911#1334#0" />
+            <element signature="e#1335#1558#0" />
+            <element signature="e#1559#1817#0" />
+            <element signature="e#1818#2008#0" />
+          </folding>
         </state>
       </provider>
     </entry>
