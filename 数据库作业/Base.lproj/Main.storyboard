@@ -147,7 +147,11 @@
                         <viewLayoutGuide key="safeArea" id="Cbx-kk-JAP"/>
                     </view>
                     <navigationItem key="navigationItem" title="注册新用户" id="yfA-v0-Szk">
-                        <barButtonItem key="rightBarButtonItem" enabled="NO" title="确定" id="lJT-gd-4Ou"/>
+                        <barButtonItem key="rightBarButtonItem" enabled="NO" title="确定" id="lJT-gd-4Ou">
+                            <connections>
+                                <action selector="addDataToCoreData:" destination="M2O-2T-t9g" id="fC9-p5-7mJ"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                     <connections>
                         <outlet property="againPasswordTextField" destination="Nf2-Mx-H5h" id="O1P-QK-39a"/>

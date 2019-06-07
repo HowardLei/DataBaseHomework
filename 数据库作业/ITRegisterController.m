@@ -8,20 +8,27 @@
 
 #import "ITRegisterController.h"
 #import "ITAdminLoginController.h"
+#import "User+CoreDataClass.h"
+#import "AppDelegate.h"
 @interface ITRegisterController () <UITextFieldDelegate, UIPickerViewDataSource, UIPickerViewDelegate, ITAdminLoginControllerDelegate>
 @property (weak, nonatomic) IBOutlet UITextField *createUserTextField;
 @property (weak, nonatomic) IBOutlet UITextField *createPasswordTextField;
 @property (weak, nonatomic) IBOutlet UITextField *againPasswordTextField;
 @property (weak, nonatomic) IBOutlet UITextField *userModeView;
 @property (weak, nonatomic) IBOutlet UIBarButtonItem *uploadButton;
+@property (nonatomic, weak) AppDelegate *appDelegate;
 @property (nonatomic, strong) NSArray<NSString *> *userArray;
+@property (nonatomic, strong) NSDictionary<NSString *, NSString *> *modeDict;
 typedef NS_ENUM(NSUInteger, ITUser) {
     ITUserStudent,
     ITUserTeacher
 };
+
 @end
 
 @implementation ITRegisterController
+NSString *const Student = @"Student";
+NSString *const Teacher = @"Teacher";
 // MARK: - View's life cycle
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -37,7 +44,25 @@ typedef NS_ENUM(NSUInteger, ITUser) {
 }
 // MARK: - Button events
 - (void)canUploadNewData {
-    self.uploadButton.enabled = (![self.createUserTextField.text isEqualToString:@""] && ![self.createPasswordTextField.text isEqualToString:@""] && ![self.againPasswordTextField.text isEqualToString:@""] && ![self.userModeView.text isEqualToString:@""]);
+    // FIXME: 当选择添加用户的模式的时候不能触发通知。
+    self.uploadButton.enabled = (self.createUserTextField.text.length > 0 && self.createPasswordTextField.text.length > 0 && self.againPasswordTextField.text.length > 0 && self.userModeView.text.length > 0);
+}
+- (IBAction)addDataToCoreData:(UIBarButtonItem *)sender {
+    User *user = [NSEntityDescription insertNewObjectForEntityForName:NSStringFromClass(User.class) inManagedObjectContext:self.appDelegate.managedObjectContext];
+    user.userName = self.createUserTextField.text;
+    user.password = self.createPasswordTextField.text;
+    user.userMode = self.modeDict[self.userModeView.text];
+    NSError *saveError = nil;
+    if ([self.appDelegate.managedObjectContext save:&saveError]) {
+        UIAlertController *alertController = [UIAlertController alertControllerWithTitle:@"保存完成" message:@"用户添加完成" preferredStyle:UIAlertControllerStyleAlert];
+        [alertController addAction:[UIAlertAction actionWithTitle:@"确定" style:UIAlertActionStyleCancel handler:^(UIAlertAction *action) {
+            [self.navigationController popViewControllerAnimated:YES];
+        }]];
+        [self presentViewController:alertController animated:YES completion:nil];
+        NSLog(@"添加成功");
+    } else {
+        NSLog(@"保存失败:%@, %@", saveError, saveError.userInfo);
+    }
 }
 // MARK: - Text field delegate
 - (void)textFieldDidBeginEditing:(UITextField *)textField {
@@ -82,6 +107,18 @@ typedef NS_ENUM(NSUInteger, ITUser) {
         _userArray = @[@"学生", @"老师"];
     }
     return _userArray;
+}
+- (AppDelegate *)appDelegate {
+    if (_appDelegate == nil) {
+        _appDelegate = (AppDelegate *)UIApplication.sharedApplication.delegate;
+    }
+    return _appDelegate;
+}
+- (NSDictionary<NSString *,NSString *> *)modeDict {
+    if (_modeDict == nil) {
+        _modeDict = @{self.userArray[ITUserStudent]: Student, self.userArray[ITUserTeacher]: Teacher};
+    }
+    return _modeDict;
 }
 // MARK: - Admin login controller delegate
 - (void)canControllerPop {

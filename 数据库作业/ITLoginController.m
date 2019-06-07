@@ -21,6 +21,7 @@
 @end
 
 @implementation ITLoginController
+static BOOL hasOtherUsers = NO;
 // MARK: - View's life cycle
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
@@ -82,22 +83,23 @@
 }
 // MARK: - Core Data initialize
 - (void)initAdmin {
-    NSFetchRequest *fetchRequest = [[NSFetchRequest alloc] init];
-    NSEntityDescription *entity = [NSEntityDescription entityForName:NSStringFromClass(User.class) inManagedObjectContext:self.appDelegate.managedObjectContext];
-    fetchRequest.entity = entity;
-    NSError *error = nil;
-    NSMutableArray *fetchedObjects = [[self.appDelegate.managedObjectContext executeFetchRequest:fetchRequest error:&error] mutableCopy];
-    while (fetchedObjects.count > 1) {
-        [self.appDelegate.managedObjectContext deleteObject:fetchedObjects.firstObject];
-        fetchedObjects = [[self.appDelegate.managedObjectContext executeFetchRequest:fetchRequest error:&error] mutableCopy];
-    }
-    NSLog(@"%lu", fetchedObjects.count);
-    for (User *user in fetchedObjects) {
-        NSLog(@"%@", user);
+    NSFetchRequest *fetchRequest = [NSFetchRequest fetchRequestWithEntityName:NSStringFromClass(User.class)];
+    NSError *searchError = nil;
+    NSMutableArray<User *> *users = nil;
+    if (!hasOtherUsers) {
+        users = [[self.appDelegate.managedObjectContext executeFetchRequest:fetchRequest error:&searchError] mutableCopy];
+        while (users.count > 1) {
+            [self.appDelegate.managedObjectContext deleteObject:users.firstObject];
+            users = [[self.appDelegate.managedObjectContext executeFetchRequest:fetchRequest error:&searchError] mutableCopy];
+        }
+        hasOtherUsers = YES;
+    } else {
+        users = [[self.appDelegate.managedObjectContext executeFetchRequest:fetchRequest error:&searchError] mutableCopy];
+        NSLog(@"%lu", users.count);
     }
     // 检查数据管理员是否存在，如果不存在就添加。
-    if (!fetchedObjects && !error) {
-        NSLog(@"错误信息：%@, %@", error, error.userInfo);
+    if (!users && !searchError) {
+        NSLog(@"错误信息：%@, %@", searchError, searchError.userInfo);
     }
 }
 // MARK: - Lazy loading properties
