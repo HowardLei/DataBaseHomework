@@ -10,7 +10,7 @@
 #import "ITAdminController.h"
 #import "ITTeacherController.h"
 #import "AppDelegate.h"
-#import "Users+CoreDataClass.h"
+#import "User+CoreDataClass.h"
 
 @interface ITLoginController () <UITextFieldDelegate>
 @property (weak, nonatomic) IBOutlet UITextField *userTextField;
@@ -37,15 +37,29 @@
 }
 // MARK: - Button events
 - (IBAction)loginIn:(UIButton *)sender {
-    NSString *admin = @"admin";
+    NSFetchRequest *fetchRequest = [[NSFetchRequest alloc] init];
+    NSEntityDescription *entity = [NSEntityDescription entityForName:NSStringFromClass(User.class) inManagedObjectContext:self.appDelegate.managedObjectContext];
+    [fetchRequest setEntity:entity];
+    // Specify criteria for filtering which objects to fetch
+//    NSPredicate *predicate = [NSPredicate predicateWithFormat:@"userMode = admin"];
+//    fetchRequest.predicate = predicate;
+    // Specify how the fetched objects should be sorted
+    NSError *error = nil;
+    NSArray<User *> *array = [self.appDelegate.managedObjectContext executeFetchRequest:fetchRequest error:&error];
+    if (array == nil) {
+        NSLog(@"数据错误");
+    }
+    for (User *user in array) {
+        NSLog(@"%@", user);
+    }
+    NSString *userName = @"admin";
     NSString *password = @"123456";
-    if ([admin isEqualToString:self.userTextField.text] && [password isEqualToString:self.passwordTextField.text]) {
+    if ([userName isEqualToString:self.userTextField.text] && [password isEqualToString:self.passwordTextField.text]) {
         // 将当前控制器的值传给 ITTeacherController 的 viewController 属性当中
         [self performSegueWithIdentifier:@"toAdmin" sender:self];
     } else {
         UIAlertController *alertController = [UIAlertController alertControllerWithTitle:@"登录失败" message:@"请检查一下输入的账号和密码" preferredStyle:UIAlertControllerStyleAlert];
-        UIAlertAction *confirmAction = [UIAlertAction actionWithTitle:@"去检查" style:UIAlertActionStyleDefault handler:nil];
-        [alertController addAction:confirmAction];
+        [alertController addAction:[UIAlertAction actionWithTitle:@"去检查" style:UIAlertActionStyleDefault handler:nil]];
         [self presentViewController:alertController animated:YES completion:nil];
     }
 }
@@ -69,14 +83,27 @@
 // MARK: - Core Data initialize
 - (void)initAdmin {
     NSFetchRequest *fetchRequest = [[NSFetchRequest alloc] init];
-    NSEntityDescription *entity = [NSEntityDescription entityForName:NSStringFromClass(Users.class) inManagedObjectContext:self.appDelegate.managedObjectContext];
+    NSEntityDescription *entity = [NSEntityDescription entityForName:NSStringFromClass(User.class) inManagedObjectContext:self.appDelegate.managedObjectContext];
     fetchRequest.entity = entity;
     NSError *error = nil;
     NSMutableArray *fetchedObjects = [[self.appDelegate.managedObjectContext executeFetchRequest:fetchRequest error:&error] mutableCopy];
     // 检查数据管理员是否存在，如果不存在就添加。
-    if (fetchedObjects == nil) {
+    if (!fetchedObjects && !error) {
         NSLog(@"错误信息：%@, %@", error, error.userInfo);
     }
+//    if (fetchedObjects.count == 0) {
+//        NSLog(@"有数据写入");
+//        NSString *userName = @"admin";
+//        NSString *password = @"123456";
+//        User *user = [NSEntityDescription insertNewObjectForEntityForName:NSStringFromClass(User.class) inManagedObjectContext:self.appDelegate.managedObjectContext];
+//        user.userName = userName;
+//        user.password = password;
+//        user.userMode = @"Admin";
+//        NSError *error = nil;
+//        if (![self.appDelegate.managedObjectContext save:&error]) {
+//            NSLog(@"保存失败：%@, %@", error, error.userInfo);
+//        }
+//    }
 }
 // MARK: - Lazy loading properties
 - (AppDelegate *)appDelegate {

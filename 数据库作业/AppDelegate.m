@@ -40,8 +40,7 @@
 }
 - (NSManagedObjectModel *)managedObjectModel {
     if (_managedObjectModel == nil) {
-        // FIXME: 这个 URL 不知道为啥，怎么都获得不了
-        NSURL *url = [NSBundle.mainBundle URLForResource:@"UsersModel" withExtension:@"momd"];
+        NSURL *url = [NSBundle.mainBundle URLForResource:@"User" withExtension:@"momd"];
         _managedObjectModel = [[NSManagedObjectModel alloc] initWithContentsOfURL:url];
     }
     return _managedObjectModel;
@@ -49,7 +48,7 @@
 - (NSPersistentStoreCoordinator *)coordinator {
     if (_coordinator == nil) {
         _coordinator = [[NSPersistentStoreCoordinator alloc] initWithManagedObjectModel:self.managedObjectModel];
-        NSURL *storeURL = [self.applicationDocumentsDirectory URLByAppendingPathComponent:@"UserModel.sqlite"];
+        NSURL *storeURL = [self.applicationDocumentsDirectory URLByAppendingPathComponent:@"User.sqlite"];
         NSError *error = nil;
         if (![_coordinator addPersistentStoreWithType:NSSQLiteStoreType configuration:nil URL:storeURL options:nil error:&error]) {
             NSLog(@"设置持久化存储器失败:%@, %@", error, error.userInfo);
