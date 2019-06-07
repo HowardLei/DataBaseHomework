@@ -19,7 +19,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="用户名" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="5aY-8W-kPj">
-                                <rect key="frame" x="406" y="350" width="300" height="34"/>
+                                <rect key="frame" x="406" y="360" width="300" height="34"/>
                                 <constraints>
                                     <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="300" id="7xl-gp-0PS"/>
                                 </constraints>
@@ -28,7 +28,7 @@
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="密码" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="ASt-ew-cgO">
-                                <rect key="frame" x="406" y="449" width="300" height="34"/>
+                                <rect key="frame" x="406" y="434" width="300" height="34"/>
                                 <constraints>
                                     <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="300" id="5fe-A0-9xm"/>
                                 </constraints>
@@ -40,21 +40,34 @@
                                 </connections>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LgU-47-dUS">
-                                <rect key="frame" x="535.5" y="543" width="41" height="36"/>
+                                <rect key="frame" x="535.5" y="568" width="41" height="36"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                 <state key="normal" title="登录"/>
                                 <connections>
                                     <action selector="loginIn:" destination="BYZ-38-t0r" eventType="touchUpInside" id="tDP-0C-KsY"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="记住密码" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EbE-3v-bEz">
+                                <rect key="frame" x="471.5" y="508" width="89.5" height="26.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="22"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="OKZ-CU-o34">
+                                <rect key="frame" x="571.5" y="506" width="51" height="31"/>
+                            </switch>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="ASt-ew-cgO" firstAttribute="top" secondItem="5aY-8W-kPj" secondAttribute="bottom" constant="65" id="1Eg-pN-LxQ"/>
+                            <constraint firstItem="ASt-ew-cgO" firstAttribute="top" secondItem="5aY-8W-kPj" secondAttribute="bottom" constant="40" id="1Eg-pN-LxQ"/>
                             <constraint firstItem="LgU-47-dUS" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="3ob-3c-RNM"/>
+                            <constraint firstItem="EbE-3v-bEz" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" constant="-40" id="5kL-zG-xoI"/>
                             <constraint firstItem="ASt-ew-cgO" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="Cgf-XR-Cmw"/>
-                            <constraint firstItem="LgU-47-dUS" firstAttribute="top" secondItem="ASt-ew-cgO" secondAttribute="bottom" constant="60" id="gAx-t9-qNk"/>
-                            <constraint firstItem="5aY-8W-kPj" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" constant="-50" id="sz3-cx-hSN"/>
+                            <constraint firstItem="EbE-3v-bEz" firstAttribute="top" secondItem="ASt-ew-cgO" secondAttribute="bottom" constant="40" id="Dmo-ZW-AOd"/>
+                            <constraint firstItem="OKZ-CU-o34" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" constant="40" id="VE5-dc-L1N"/>
+                            <constraint firstItem="LgU-47-dUS" firstAttribute="top" secondItem="ASt-ew-cgO" secondAttribute="bottom" constant="100" id="gAx-t9-qNk"/>
+                            <constraint firstItem="OKZ-CU-o34" firstAttribute="centerY" secondItem="EbE-3v-bEz" secondAttribute="centerY" id="rSv-xD-479"/>
+                            <constraint firstItem="5aY-8W-kPj" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" constant="-40" id="sz3-cx-hSN"/>
                             <constraint firstItem="5aY-8W-kPj" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="xCD-qe-qv4"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
@@ -69,6 +82,7 @@
                     <connections>
                         <outlet property="loginButton" destination="LgU-47-dUS" id="xWT-HL-Ewe"/>
                         <outlet property="passwordTextField" destination="ASt-ew-cgO" id="tg1-Mu-M2w"/>
+                        <outlet property="rememberPassword" destination="OKZ-CU-o34" id="now-Go-EeL"/>
                         <outlet property="userTextField" destination="5aY-8W-kPj" id="JR3-fC-7he"/>
                         <segue destination="qqa-Bf-kBH" kind="show" identifier="toAdmin" id="jHQ-DS-WeP"/>
                     </connections>

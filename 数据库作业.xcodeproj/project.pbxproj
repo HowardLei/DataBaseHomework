@@ -141,9 +141,9 @@
 			isa = PBXGroup;
 			children = (
 				63CAC61A22A9767000EC9A17 /* User+CoreDataProperties.h */,
+				63CAC61D22A9767000EC9A17 /* User+CoreDataProperties.m */,
 				63CAC61B22A9767000EC9A17 /* User+CoreDataClass.h */,
 				63CAC61C22A9767000EC9A17 /* User+CoreDataClass.m */,
-				63CAC61D22A9767000EC9A17 /* User+CoreDataProperties.m */,
 			);
 			name = Model;
 			sourceTree = "<group>";
