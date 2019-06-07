@@ -31,7 +31,7 @@
     dateFormatter.dateFormat = @"HH:mm";
     NSString *time = [dateFormatter stringFromDate:[NSDate date]];
     int hour = time.intValue;
-    // 根据时间判断选择数组当中的第几个选项。
+    // 根据时间判断选择数组当中的第几个选项。 
 }
 // MARK: - Lazy loading datas
 - (NSArray<NSString *> *)timeSeperations {

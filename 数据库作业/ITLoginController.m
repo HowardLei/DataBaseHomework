@@ -85,21 +85,16 @@ static BOOL hasOtherUsers = NO;
 - (void)initAdmin {
     NSFetchRequest *fetchRequest = [NSFetchRequest fetchRequestWithEntityName:NSStringFromClass(User.class)];
     NSError *searchError = nil;
-    NSMutableArray<User *> *users = nil;
+    NSMutableArray<User *> *users = [[self.appDelegate.managedObjectContext executeFetchRequest:fetchRequest error:&searchError] mutableCopy];
+    if (!users && !searchError) {
+        NSLog(@"错误信息：%@, %@", searchError, searchError.userInfo);
+    }
     if (!hasOtherUsers) {
-        users = [[self.appDelegate.managedObjectContext executeFetchRequest:fetchRequest error:&searchError] mutableCopy];
         while (users.count > 1) {
             [self.appDelegate.managedObjectContext deleteObject:users.firstObject];
             users = [[self.appDelegate.managedObjectContext executeFetchRequest:fetchRequest error:&searchError] mutableCopy];
         }
         hasOtherUsers = YES;
-    } else {
-        users = [[self.appDelegate.managedObjectContext executeFetchRequest:fetchRequest error:&searchError] mutableCopy];
-        NSLog(@"%lu", users.count);
-    }
-    // 检查数据管理员是否存在，如果不存在就添加。
-    if (!users && !searchError) {
-        NSLog(@"错误信息：%@, %@", searchError, searchError.userInfo);
     }
 }
 // MARK: - Lazy loading properties
