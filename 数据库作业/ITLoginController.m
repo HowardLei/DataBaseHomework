@@ -39,7 +39,7 @@
 - (IBAction)loginIn:(UIButton *)sender {
     NSFetchRequest *fetchRequest = [[NSFetchRequest alloc] init];
     NSEntityDescription *entity = [NSEntityDescription entityForName:NSStringFromClass(User.class) inManagedObjectContext:self.appDelegate.managedObjectContext];
-    [fetchRequest setEntity:entity];
+    fetchRequest.entity = entity;
     // Specify criteria for filtering which objects to fetch
 //    NSPredicate *predicate = [NSPredicate predicateWithFormat:@"userMode = admin"];
 //    fetchRequest.predicate = predicate;
