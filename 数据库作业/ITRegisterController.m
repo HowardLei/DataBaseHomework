@@ -45,6 +45,7 @@ NSString *const Teacher = @"Teacher";
 // MARK: - Button events
 - (void)canUploadNewData {
     // FIXME: 当选择添加用户的模式的时候不能触发通知。
+    // 现在只能通过调整选择顺序来避开这个 Bug
     self.uploadButton.enabled = (self.createUserTextField.text.length > 0 && self.createPasswordTextField.text.length > 0 && self.againPasswordTextField.text.length > 0 && self.userModeView.text.length > 0);
 }
 - (IBAction)addDataToCoreData:(UIBarButtonItem *)sender {

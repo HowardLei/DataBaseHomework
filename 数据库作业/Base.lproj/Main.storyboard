@@ -100,28 +100,28 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="新创建的用户名" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="5mv-Tv-qsb">
-                                <rect key="frame" x="406" y="130" width="300" height="30"/>
+                                <rect key="frame" x="406" y="220" width="300" height="30"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="300" id="mSI-am-wMa"/>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="300" id="UIF-OZ-9fU"/>
                                 </constraints>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="设置你的密码" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="NSN-TS-Dhl">
-                                <rect key="frame" x="406" y="180" width="300" height="30"/>
-                                <nil key="textColor"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
-                                <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
-                            </textField>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="请再输入一遍你的密码" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Nf2-Mx-H5h">
-                                <rect key="frame" x="406" y="230" width="300" height="30"/>
+                                <rect key="frame" x="406" y="320" width="300" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="300" id="WsV-3O-W8i"/>
+                                </constraints>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                 <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
                             </textField>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="请选择添加的用户" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="LN5-Yw-TeA">
-                                <rect key="frame" x="406" y="280" width="300" height="30"/>
+                                <rect key="frame" x="406" y="170" width="300" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="300" id="82V-Kc-9Ju"/>
+                                </constraints>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="21"/>
                                 <textInputTraits key="textInputTraits"/>
@@ -129,20 +129,26 @@
                                     <outlet property="delegate" destination="M2O-2T-t9g" id="XPJ-GE-k1v"/>
                                 </connections>
                             </textField>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="设置你的密码" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="NSN-TS-Dhl">
+                                <rect key="frame" x="406" y="270" width="300" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="300" id="jiK-tN-YhQ"/>
+                                </constraints>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
+                            </textField>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="Nf2-Mx-H5h" firstAttribute="width" secondItem="NSN-TS-Dhl" secondAttribute="width" id="G3j-bw-RQz"/>
-                            <constraint firstItem="NSN-TS-Dhl" firstAttribute="centerX" secondItem="5mv-Tv-qsb" secondAttribute="centerX" id="Jdx-cn-EuP"/>
-                            <constraint firstItem="NSN-TS-Dhl" firstAttribute="width" secondItem="5mv-Tv-qsb" secondAttribute="width" id="N61-hk-UEd"/>
-                            <constraint firstItem="LN5-Yw-TeA" firstAttribute="top" secondItem="Nf2-Mx-H5h" secondAttribute="bottom" constant="20" id="TGE-bo-prc"/>
-                            <constraint firstItem="LN5-Yw-TeA" firstAttribute="centerX" secondItem="5mv-Tv-qsb" secondAttribute="centerX" id="ZCx-DA-V8P"/>
-                            <constraint firstItem="LN5-Yw-TeA" firstAttribute="width" secondItem="NSN-TS-Dhl" secondAttribute="width" id="ZGl-zD-gT9"/>
-                            <constraint firstItem="Nf2-Mx-H5h" firstAttribute="centerX" secondItem="5mv-Tv-qsb" secondAttribute="centerX" id="dQt-jZ-S4Q"/>
-                            <constraint firstItem="5mv-Tv-qsb" firstAttribute="centerX" secondItem="HfB-Qv-fB2" secondAttribute="centerX" id="hNc-fe-Nkw"/>
-                            <constraint firstItem="5mv-Tv-qsb" firstAttribute="top" secondItem="Cbx-kk-JAP" secondAttribute="top" constant="60" id="nIf-zt-9ba"/>
-                            <constraint firstItem="Nf2-Mx-H5h" firstAttribute="top" secondItem="NSN-TS-Dhl" secondAttribute="bottom" constant="20" id="nXZ-lO-oPi"/>
-                            <constraint firstItem="NSN-TS-Dhl" firstAttribute="top" secondItem="5mv-Tv-qsb" secondAttribute="bottom" constant="20" id="ypG-nl-SrU"/>
+                            <constraint firstItem="5mv-Tv-qsb" firstAttribute="centerX" secondItem="HfB-Qv-fB2" secondAttribute="centerX" id="80P-jG-x6M"/>
+                            <constraint firstItem="Nf2-Mx-H5h" firstAttribute="centerX" secondItem="HfB-Qv-fB2" secondAttribute="centerX" id="980-bt-DDo"/>
+                            <constraint firstItem="LN5-Yw-TeA" firstAttribute="top" secondItem="Cbx-kk-JAP" secondAttribute="top" constant="100" id="B50-rf-l9A"/>
+                            <constraint firstItem="LN5-Yw-TeA" firstAttribute="centerX" secondItem="HfB-Qv-fB2" secondAttribute="centerX" id="EG0-00-ZuL"/>
+                            <constraint firstItem="NSN-TS-Dhl" firstAttribute="top" secondItem="5mv-Tv-qsb" secondAttribute="bottom" constant="20" id="Zzy-7T-b4M"/>
+                            <constraint firstItem="NSN-TS-Dhl" firstAttribute="centerX" secondItem="HfB-Qv-fB2" secondAttribute="centerX" id="bnn-Ko-jqa"/>
+                            <constraint firstItem="5mv-Tv-qsb" firstAttribute="top" secondItem="LN5-Yw-TeA" secondAttribute="bottom" constant="20" id="oqv-TT-wbG"/>
+                            <constraint firstItem="Nf2-Mx-H5h" firstAttribute="top" secondItem="NSN-TS-Dhl" secondAttribute="bottom" constant="20" id="osv-vb-hZ6"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="Cbx-kk-JAP"/>
                     </view>
