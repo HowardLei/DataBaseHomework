@@ -1,8 +1,8 @@
 //
-//  ITStudentController.h
+//  ITAdminTeacherController.h
 //  数据库作业
 //
-//  Created by 雷维卡 on 2019/5/18.
+//  Created by apple on 2019/6/7.
 //  Copyright © 2019 ITCenter. All rights reserved.
 //
 
@@ -10,7 +10,7 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface ITStudentController : UITabBarController
+@interface ITAdminTeacherController : UINavigationController
 
 @end
 

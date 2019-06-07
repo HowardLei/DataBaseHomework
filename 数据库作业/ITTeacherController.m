@@ -21,6 +21,7 @@
 }
 
 // MARK: - Button events
+// FIXME: 退出窗口失败
 - (IBAction)logout:(UIBarButtonItem *)sender {
     AppDelegate *appDelegate = (AppDelegate *) UIApplication.sharedApplication.delegate;
     appDelegate.window.rootViewController = [[UINavigationController alloc] initWithRootViewController:self.viewController];

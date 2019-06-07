@@ -8,6 +8,7 @@
 
 #import "ITLoginController.h"
 #import "ITAdminController.h"
+#import "ITStudentController.h"
 #import "ITTeacherController.h"
 #import "AppDelegate.h"
 #import "User+CoreDataClass.h"
@@ -21,11 +22,13 @@
 @end
 
 @implementation ITLoginController
-static BOOL hasOtherUsers = NO;
 // MARK: - View's life cycle
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
     [self initAdmin];
+    if (!self.rememberPassword.isOn) {
+        self.userTextField.text = nil;
+    }
 }
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -58,7 +61,17 @@ static BOOL hasOtherUsers = NO;
         if (!self.rememberPassword.isOn) {
             self.passwordTextField.text = nil;
         }
-        [self performSegueWithIdentifier:@"toAdmin" sender:self];
+        NSString *userMode = users.firstObject.userMode;
+        if ([userMode isEqualToString:@"Admin"]) {
+            ITAdminController *adminController = [self.storyboard instantiateViewControllerWithIdentifier:@"adminController"];
+            [self.navigationController pushViewController:adminController animated:YES];
+        } else if ([userMode isEqualToString:@"Student"]) {
+            ITStudentController *studentController = [self.storyboard instantiateViewControllerWithIdentifier:@"studentController"];
+            [self.navigationController pushViewController:studentController animated:YES];
+        } else {
+            ITTeacherController *teacherController = [self.storyboard instantiateViewControllerWithIdentifier:@"teacherController"];
+            [self.navigationController pushViewController:teacherController animated:YES];
+        }
     }
     if (users == nil) {
         NSLog(@"数据错误");
@@ -75,12 +88,11 @@ static BOOL hasOtherUsers = NO;
 }
 // MARK: - Segue operations
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    if ([segue.identifier isEqualToString:@"toAdmin"]) {
-        ITAdminController *adminController = segue.destinationViewController;
-        ITTeacherController *teacherController = (ITTeacherController *) adminController.topViewController;
-        teacherController.viewController = self;
+    if ([segue.destinationViewController isMemberOfClass:ITTeacherController.class]) {
+        NSLog(@"%s", __FUNCTION__);
     }
 }
+// FIXME: 登录业务转移到按钮点击当中
 // MARK: - Core Data initialize
 - (void)initAdmin {
     NSFetchRequest *fetchRequest = [NSFetchRequest fetchRequestWithEntityName:NSStringFromClass(User.class)];
@@ -89,12 +101,21 @@ static BOOL hasOtherUsers = NO;
     if (!users && !searchError) {
         NSLog(@"错误信息：%@, %@", searchError, searchError.userInfo);
     }
-    if (!hasOtherUsers) {
-        while (users.count > 1) {
-            [self.appDelegate.managedObjectContext deleteObject:users.firstObject];
-            users = [[self.appDelegate.managedObjectContext executeFetchRequest:fetchRequest error:&searchError] mutableCopy];
-        }
-        hasOtherUsers = YES;
+    if (users.count < 1) {
+        // 创建管理员
+        static dispatch_once_t onceToken;
+        dispatch_once(&onceToken, ^{
+            User *user = [NSEntityDescription insertNewObjectForEntityForName:NSStringFromClass(User.class) inManagedObjectContext:self.appDelegate.managedObjectContext];
+            user.userName = @"admin";
+            user.password = @"123456";
+            user.userMode = @"Admin";
+            NSError *saveError = nil;
+            if ([self.appDelegate.managedObjectContext save:&saveError]) {
+                NSLog(@"成功");
+            } else {
+                NSLog(@"添加失败");
+            }
+        });
     }
 }
 // MARK: - Lazy loading properties

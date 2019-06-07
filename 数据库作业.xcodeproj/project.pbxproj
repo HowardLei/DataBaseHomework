@@ -9,6 +9,9 @@
 /* Begin PBXBuildFile section */
 		18B5E42B229965B700CF4781 /* ITAdminController.m in Sources */ = {isa = PBXBuildFile; fileRef = 18B5E42A229965B700CF4781 /* ITAdminController.m */; };
 		18B5E42E22996D9A00CF4781 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 18B5E42D22996D9A00CF4781 /* Assets.xcassets */; };
+		18EC8FEB22AA85C700402A8C /* ITAdminStudentController.m in Sources */ = {isa = PBXBuildFile; fileRef = 18EC8FEA22AA85C700402A8C /* ITAdminStudentController.m */; };
+		18EC8FEF22AA8A1B00402A8C /* ITAdminTeacherController.m in Sources */ = {isa = PBXBuildFile; fileRef = 18EC8FEE22AA8A1B00402A8C /* ITAdminTeacherController.m */; };
+		18EC8FF222AA8C9B00402A8C /* ITManageController.m in Sources */ = {isa = PBXBuildFile; fileRef = 18EC8FF122AA8C9B00402A8C /* ITManageController.m */; };
 		6353A2BF22A2717700691539 /* ITTeacherSettingController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6353A2BE22A2717700691539 /* ITTeacherSettingController.m */; };
 		6353A2C222A277A900691539 /* ITTeacherWelcomeController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6353A2C122A277A900691539 /* ITTeacherWelcomeController.m */; };
 		6395F018228FF13D007EA3EB /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 6395F017228FF13D007EA3EB /* AppDelegate.m */; };
@@ -29,6 +32,12 @@
 		18B5E429229965B700CF4781 /* ITAdminController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ITAdminController.h; sourceTree = "<group>"; };
 		18B5E42A229965B700CF4781 /* ITAdminController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ITAdminController.m; sourceTree = "<group>"; };
 		18B5E42D22996D9A00CF4781 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		18EC8FE922AA85C700402A8C /* ITAdminStudentController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ITAdminStudentController.h; sourceTree = "<group>"; };
+		18EC8FEA22AA85C700402A8C /* ITAdminStudentController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ITAdminStudentController.m; sourceTree = "<group>"; };
+		18EC8FED22AA8A1B00402A8C /* ITAdminTeacherController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ITAdminTeacherController.h; sourceTree = "<group>"; };
+		18EC8FEE22AA8A1B00402A8C /* ITAdminTeacherController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ITAdminTeacherController.m; sourceTree = "<group>"; };
+		18EC8FF022AA8C9B00402A8C /* ITManageController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ITManageController.h; sourceTree = "<group>"; };
+		18EC8FF122AA8C9B00402A8C /* ITManageController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ITManageController.m; sourceTree = "<group>"; };
 		6353A2BD22A2717700691539 /* ITTeacherSettingController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ITTeacherSettingController.h; sourceTree = "<group>"; };
 		6353A2BE22A2717700691539 /* ITTeacherSettingController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ITTeacherSettingController.m; sourceTree = "<group>"; };
 		6353A2C022A277A900691539 /* ITTeacherWelcomeController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ITTeacherWelcomeController.h; sourceTree = "<group>"; };
@@ -68,6 +77,56 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		18EC8FE522AA81A400402A8C /* Student */ = {
+			isa = PBXGroup;
+			children = (
+				6395F03A22900206007EA3EB /* ITStudentController.h */,
+				6395F03B22900206007EA3EB /* ITStudentController.m */,
+				18EC8FE922AA85C700402A8C /* ITAdminStudentController.h */,
+				18EC8FEA22AA85C700402A8C /* ITAdminStudentController.m */,
+			);
+			name = Student;
+			sourceTree = "<group>";
+		};
+		18EC8FE622AA81A900402A8C /* Teacher */ = {
+			isa = PBXGroup;
+			children = (
+				6395F037229001EC007EA3EB /* ITTeacherController.h */,
+				6395F038229001EC007EA3EB /* ITTeacherController.m */,
+				6353A2BD22A2717700691539 /* ITTeacherSettingController.h */,
+				6353A2BE22A2717700691539 /* ITTeacherSettingController.m */,
+				6353A2C022A277A900691539 /* ITTeacherWelcomeController.h */,
+				6353A2C122A277A900691539 /* ITTeacherWelcomeController.m */,
+				18EC8FED22AA8A1B00402A8C /* ITAdminTeacherController.h */,
+				18EC8FEE22AA8A1B00402A8C /* ITAdminTeacherController.m */,
+			);
+			name = Teacher;
+			sourceTree = "<group>";
+		};
+		18EC8FE722AA81AE00402A8C /* Admin */ = {
+			isa = PBXGroup;
+			children = (
+				18B5E429229965B700CF4781 /* ITAdminController.h */,
+				18B5E42A229965B700CF4781 /* ITAdminController.m */,
+				18EC8FF022AA8C9B00402A8C /* ITManageController.h */,
+				18EC8FF122AA8C9B00402A8C /* ITManageController.m */,
+			);
+			name = Admin;
+			sourceTree = "<group>";
+		};
+		18EC8FE822AA81CE00402A8C /* Other */ = {
+			isa = PBXGroup;
+			children = (
+				63EE3D42229EE7A30061614E /* ITAdminLoginController.h */,
+				63EE3D43229EE7A30061614E /* ITAdminLoginController.m */,
+				6395F031228FFBF8007EA3EB /* ITLoginController.h */,
+				6395F032228FFBF8007EA3EB /* ITLoginController.m */,
+				6395F034228FFEE0007EA3EB /* ITRegisterController.h */,
+				6395F035228FFEE0007EA3EB /* ITRegisterController.m */,
+			);
+			name = Other;
+			sourceTree = "<group>";
+		};
 		58B83143547B86332994BBFD /* Databases */ = {
 			isa = PBXGroup;
 			children = (
@@ -108,22 +167,10 @@
 		6395F02C228FF720007EA3EB /* Controller */ = {
 			isa = PBXGroup;
 			children = (
-				6395F031228FFBF8007EA3EB /* ITLoginController.h */,
-				6395F032228FFBF8007EA3EB /* ITLoginController.m */,
-				6395F034228FFEE0007EA3EB /* ITRegisterController.h */,
-				6395F035228FFEE0007EA3EB /* ITRegisterController.m */,
-				6395F037229001EC007EA3EB /* ITTeacherController.h */,
-				6395F038229001EC007EA3EB /* ITTeacherController.m */,
-				6395F03A22900206007EA3EB /* ITStudentController.h */,
-				6395F03B22900206007EA3EB /* ITStudentController.m */,
-				18B5E429229965B700CF4781 /* ITAdminController.h */,
-				18B5E42A229965B700CF4781 /* ITAdminController.m */,
-				63EE3D42229EE7A30061614E /* ITAdminLoginController.h */,
-				63EE3D43229EE7A30061614E /* ITAdminLoginController.m */,
-				6353A2BD22A2717700691539 /* ITTeacherSettingController.h */,
-				6353A2BE22A2717700691539 /* ITTeacherSettingController.m */,
-				6353A2C022A277A900691539 /* ITTeacherWelcomeController.h */,
-				6353A2C122A277A900691539 /* ITTeacherWelcomeController.m */,
+				18EC8FE822AA81CE00402A8C /* Other */,
+				18EC8FE722AA81AE00402A8C /* Admin */,
+				18EC8FE622AA81A900402A8C /* Teacher */,
+				18EC8FE522AA81A400402A8C /* Student */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -241,11 +288,14 @@
 			files = (
 				6395F026228FF13E007EA3EB /* main.m in Sources */,
 				6395F018228FF13D007EA3EB /* AppDelegate.m in Sources */,
+				18EC8FEB22AA85C700402A8C /* ITAdminStudentController.m in Sources */,
 				6395F039229001EC007EA3EB /* ITTeacherController.m in Sources */,
 				6395F033228FFBF8007EA3EB /* ITLoginController.m in Sources */,
 				6395F03C22900206007EA3EB /* ITStudentController.m in Sources */,
 				63CAC61F22A9767000EC9A17 /* User+CoreDataProperties.m in Sources */,
 				6395F036228FFEE0007EA3EB /* ITRegisterController.m in Sources */,
+				18EC8FEF22AA8A1B00402A8C /* ITAdminTeacherController.m in Sources */,
+				18EC8FF222AA8C9B00402A8C /* ITManageController.m in Sources */,
 				63CAC61E22A9767000EC9A17 /* User+CoreDataClass.m in Sources */,
 				63EE3D44229EE7A30061614E /* ITAdminLoginController.m in Sources */,
 				63CAC61922A9757200EC9A17 /* User.xcdatamodeld in Sources */,
