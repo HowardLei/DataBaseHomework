@@ -86,13 +86,6 @@
     [self loginIn:self.loginButton];
     return YES;
 }
-// MARK: - Segue operations
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    if ([segue.destinationViewController isMemberOfClass:ITTeacherController.class]) {
-        NSLog(@"%s", __FUNCTION__);
-    }
-}
-// FIXME: 登录业务转移到按钮点击当中
 // MARK: - Core Data initialize
 - (void)initAdmin {
     NSFetchRequest *fetchRequest = [NSFetchRequest fetchRequestWithEntityName:NSStringFromClass(User.class)];
@@ -109,6 +102,7 @@
             user.userName = @"admin";
             user.password = @"123456";
             user.userMode = @"Admin";
+            user.name = @"管理员";
             NSError *saveError = nil;
             if ([self.appDelegate.managedObjectContext save:&saveError]) {
                 NSLog(@"成功");

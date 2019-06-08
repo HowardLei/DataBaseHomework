@@ -9,7 +9,7 @@
 #import "ITStudentController.h"
 
 @interface ITStudentController ()
-
+@property (weak, nonatomic) IBOutlet UIBarButtonItem *logOutButton;
 @end
 
 @implementation ITStudentController
@@ -17,6 +17,9 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+}
+- (IBAction)logOut:(UIBarButtonItem *)sender {
+    [self.navigationController popViewControllerAnimated:YES];
 }
 
 @end

@@ -137,15 +137,24 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                 <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
                             </textField>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="你的真实姓名" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="zMm-Or-vVY">
+                                <rect key="frame" x="406" y="370" width="300" height="30"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="5mv-Tv-qsb" firstAttribute="centerX" secondItem="HfB-Qv-fB2" secondAttribute="centerX" id="80P-jG-x6M"/>
                             <constraint firstItem="Nf2-Mx-H5h" firstAttribute="centerX" secondItem="HfB-Qv-fB2" secondAttribute="centerX" id="980-bt-DDo"/>
+                            <constraint firstItem="zMm-Or-vVY" firstAttribute="centerX" secondItem="HfB-Qv-fB2" secondAttribute="centerX" id="ATT-J1-ktZ"/>
                             <constraint firstItem="LN5-Yw-TeA" firstAttribute="top" secondItem="Cbx-kk-JAP" secondAttribute="top" constant="100" id="B50-rf-l9A"/>
                             <constraint firstItem="LN5-Yw-TeA" firstAttribute="centerX" secondItem="HfB-Qv-fB2" secondAttribute="centerX" id="EG0-00-ZuL"/>
+                            <constraint firstItem="zMm-Or-vVY" firstAttribute="top" secondItem="Nf2-Mx-H5h" secondAttribute="bottom" constant="20" id="SGp-Wf-VN3"/>
                             <constraint firstItem="NSN-TS-Dhl" firstAttribute="top" secondItem="5mv-Tv-qsb" secondAttribute="bottom" constant="20" id="Zzy-7T-b4M"/>
                             <constraint firstItem="NSN-TS-Dhl" firstAttribute="centerX" secondItem="HfB-Qv-fB2" secondAttribute="centerX" id="bnn-Ko-jqa"/>
+                            <constraint firstItem="zMm-Or-vVY" firstAttribute="width" secondItem="Nf2-Mx-H5h" secondAttribute="width" id="dLa-0h-cdc"/>
                             <constraint firstItem="5mv-Tv-qsb" firstAttribute="top" secondItem="LN5-Yw-TeA" secondAttribute="bottom" constant="20" id="oqv-TT-wbG"/>
                             <constraint firstItem="Nf2-Mx-H5h" firstAttribute="top" secondItem="NSN-TS-Dhl" secondAttribute="bottom" constant="20" id="osv-vb-hZ6"/>
                         </constraints>
@@ -162,6 +171,7 @@
                         <outlet property="againPasswordTextField" destination="Nf2-Mx-H5h" id="O1P-QK-39a"/>
                         <outlet property="createPasswordTextField" destination="NSN-TS-Dhl" id="zek-2U-qgL"/>
                         <outlet property="createUserTextField" destination="5mv-Tv-qsb" id="t5u-rB-aXF"/>
+                        <outlet property="realNameTextField" destination="zMm-Or-vVY" id="p1D-Bm-8bg"/>
                         <outlet property="uploadButton" destination="lJT-gd-4Ou" id="RYM-K2-2Kb"/>
                         <outlet property="userModeView" destination="LN5-Yw-TeA" id="Fsg-Ge-v6i"/>
                     </connections>
@@ -270,30 +280,30 @@
                         <rect key="frame" x="0.0" y="0.0" width="1112" height="834"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="下午好" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="P7E-mz-zLz">
-                                <rect key="frame" x="100" y="130" width="120" height="56"/>
-                                <fontDescription key="fontDescription" name="PingFangSC-Semibold" family="PingFang SC" pointSize="40"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="老师好" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2tA-Ay-BiL">
+                                <rect key="frame" x="130" y="130" width="76" height="30"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="25"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="P7E-mz-zLz" firstAttribute="leading" secondItem="bi8-Gx-MbG" secondAttribute="leading" constant="100" id="2Zq-wC-AGS"/>
-                            <constraint firstItem="P7E-mz-zLz" firstAttribute="top" secondItem="bi8-Gx-MbG" secondAttribute="top" constant="60" id="6jx-F9-XR0"/>
-                            <constraint firstItem="bi8-Gx-MbG" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="P7E-mz-zLz" secondAttribute="trailing" constant="890" id="SQQ-6A-LqC"/>
+                            <constraint firstItem="bi8-Gx-MbG" firstAttribute="trailing" relation="lessThanOrEqual" secondItem="2tA-Ay-BiL" secondAttribute="trailing" constant="906" id="4QD-rc-9bd"/>
+                            <constraint firstItem="2tA-Ay-BiL" firstAttribute="leading" secondItem="bi8-Gx-MbG" secondAttribute="leading" constant="130" id="8Wf-2E-eci"/>
+                            <constraint firstItem="2tA-Ay-BiL" firstAttribute="top" secondItem="bi8-Gx-MbG" secondAttribute="top" constant="60" id="moh-BG-OFh"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="bi8-Gx-MbG"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="首页" id="MBA-Qj-VtK"/>
                     <navigationItem key="navigationItem" id="Nyq-kH-Qrh"/>
                     <connections>
-                        <outlet property="welcomeLabel" destination="P7E-mz-zLz" id="IGp-k1-nPI"/>
+                        <outlet property="welcomeLabel" destination="2tA-Ay-BiL" id="03k-dn-afL"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="5J7-Gz-piX" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2948" y="-414"/>
+            <point key="canvasLocation" x="2947.6618705035971" y="-414.38848920863313"/>
         </scene>
         <!--Manage Controller-->
         <scene sceneID="d1m-q0-Cyc">
@@ -340,7 +350,7 @@
             </objects>
             <point key="canvasLocation" x="1655" y="1116"/>
         </scene>
-        <!--Item 2-->
+        <!--更多-->
         <scene sceneID="Wkk-Nl-iQ6">
             <objects>
                 <viewController id="ySm-r1-Rho" sceneMemberID="viewController">
@@ -350,23 +360,23 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="zaQ-3U-PcZ"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Item 2" id="8ln-jN-bxH"/>
+                    <tabBarItem key="tabBarItem" title="更多" id="8ln-jN-bxH"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="z8Q-Cl-wwE" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2948" y="-2068"/>
         </scene>
-        <!--Item 1-->
+        <!--成绩-->
         <scene sceneID="vBT-UQ-8wn">
             <objects>
-                <viewController id="yDm-Oe-ieO" sceneMemberID="viewController">
+                <viewController id="yDm-Oe-ieO" customClass="ITStudentScoreController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="lYm-G5-PYk">
                         <rect key="frame" x="0.0" y="0.0" width="1112" height="834"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="hGt-bO-1Tg"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Item 1" id="Xl5-j4-mJr"/>
+                    <tabBarItem key="tabBarItem" title="成绩" id="Xl5-j4-mJr"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="lP2-1U-gDP" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -404,17 +414,24 @@
             </objects>
             <point key="canvasLocation" x="1549" y="-414"/>
         </scene>
-        <!--Student Controller-->
+        <!--学生管理器-->
         <scene sceneID="x9i-wF-0Nr">
             <objects>
                 <tabBarController storyboardIdentifier="studentController" id="lWe-j0-PqS" customClass="ITStudentController" sceneMemberID="viewController">
-                    <navigationItem key="navigationItem" id="7VR-Mb-AEt"/>
+                    <navigationItem key="navigationItem" title="学生管理器" id="7VR-Mb-AEt">
+                        <barButtonItem key="leftBarButtonItem" title="注销" id="RFH-Te-7do">
+                            <connections>
+                                <action selector="logOut:" destination="lWe-j0-PqS" id="1ax-kk-33m"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="Cf0-RX-aeD">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="49"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </tabBar>
                     <connections>
+                        <outlet property="logOutButton" destination="RFH-Te-7do" id="XoD-dQ-w98"/>
                         <segue destination="yDm-Oe-ieO" kind="relationship" relationship="viewControllers" id="ik5-Oc-vdb"/>
                         <segue destination="ySm-r1-Rho" kind="relationship" relationship="viewControllers" id="oXa-bB-JMn"/>
                     </connections>

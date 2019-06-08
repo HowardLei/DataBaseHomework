@@ -11,6 +11,6 @@
 
 @implementation User
 - (NSString *)description {
-    return [NSString stringWithFormat:@"userName = %@, password = %@, userMode = %@", self.userName, self.password, self.userMode];
+    return [NSString stringWithFormat:@"userName = %@, password = %@, userMode = %@, name = %@", self.userName, self.password, self.userMode, self.name];
 }
 @end

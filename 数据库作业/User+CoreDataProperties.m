@@ -18,5 +18,6 @@
 @dynamic userName;
 @dynamic password;
 @dynamic userMode;
+@dynamic name;
 
 @end
