@@ -7,9 +7,11 @@
 //
 
 #import "ITTeacherWelcomeController.h"
+#import "AppDelegate.h"
 
 @interface ITTeacherWelcomeController ()
 @property (weak, nonatomic) IBOutlet UILabel *welcomeLabel;
+@property (weak, nonatomic) AppDelegate *appDelegate;
 @end
 
 @implementation ITTeacherWelcomeController
@@ -17,5 +19,12 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+    self.welcomeLabel.text = [NSString stringWithFormat:@"%@老师，欢迎回来", [self.appDelegate.name substringToIndex:1]];
+}
+- (AppDelegate *)appDelegate {
+    if (_appDelegate == nil) {
+        _appDelegate = (AppDelegate *)UIApplication.sharedApplication.delegate;
+    }
+    return _appDelegate;
 }
 @end

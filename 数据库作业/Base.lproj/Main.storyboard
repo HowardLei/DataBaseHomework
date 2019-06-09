@@ -367,18 +367,31 @@
             <point key="canvasLocation" x="2948" y="-2068"/>
         </scene>
         <!--成绩-->
-        <scene sceneID="vBT-UQ-8wn">
+        <scene sceneID="Duw-nc-BPw">
             <objects>
-                <viewController id="yDm-Oe-ieO" customClass="ITStudentScoreController" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="lYm-G5-PYk">
+                <tableViewController id="iWh-eQ-BhO" customClass="ITStudentScoreController" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="Y6e-oj-ae8">
                         <rect key="frame" x="0.0" y="0.0" width="1112" height="834"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <viewLayoutGuide key="safeArea" id="hGt-bO-1Tg"/>
-                    </view>
-                    <tabBarItem key="tabBarItem" title="成绩" id="Xl5-j4-mJr"/>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="lP2-1U-gDP" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="studentScoreCell" id="yqV-ID-D2P">
+                                <rect key="frame" x="0.0" y="28" width="1112" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="yqV-ID-D2P" id="7Ai-zF-BEc">
+                                    <rect key="frame" x="0.0" y="0.0" width="1112" height="43.5"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="iWh-eQ-BhO" id="463-We-jfL"/>
+                            <outlet property="delegate" destination="iWh-eQ-BhO" id="gGk-SU-lwl"/>
+                        </connections>
+                    </tableView>
+                    <tabBarItem key="tabBarItem" title="成绩" id="ovZ-Ie-IAM"/>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="oaT-RE-Rt9" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2948" y="-1255"/>
         </scene>
@@ -432,7 +445,7 @@
                     </tabBar>
                     <connections>
                         <outlet property="logOutButton" destination="RFH-Te-7do" id="XoD-dQ-w98"/>
-                        <segue destination="yDm-Oe-ieO" kind="relationship" relationship="viewControllers" id="ik5-Oc-vdb"/>
+                        <segue destination="iWh-eQ-BhO" kind="relationship" relationship="viewControllers" id="CgG-g2-75c"/>
                         <segue destination="ySm-r1-Rho" kind="relationship" relationship="viewControllers" id="oXa-bB-JMn"/>
                     </connections>
                 </tabBarController>

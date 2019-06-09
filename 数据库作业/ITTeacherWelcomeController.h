@@ -11,7 +11,7 @@
 NS_ASSUME_NONNULL_BEGIN
 
 @interface ITTeacherWelcomeController : UIViewController
-@property (nonatomic, copy) NSString *receiver;
+
 @end
 
 NS_ASSUME_NONNULL_END

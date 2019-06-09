@@ -11,8 +11,11 @@
 
 @interface AppDelegate : UIResponder <UIApplicationDelegate>
 @property (strong, nonatomic) UIWindow *window;
+// MARK: - Core Data properties
 @property (nonatomic, strong) NSManagedObjectContext *managedObjectContext;
 @property (nonatomic, strong) NSManagedObjectModel *managedObjectModel;
 @property (nonatomic, strong) NSPersistentStoreCoordinator *coordinator;
 @property (nonatomic, strong, readonly) NSURL *applicationDocumentsDirectory;
+// MARK: - Exchange properties
+@property (nonatomic, copy) NSString *name;
 @end

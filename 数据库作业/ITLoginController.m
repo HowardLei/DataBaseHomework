@@ -6,12 +6,14 @@
 //  Copyright © 2019 ITCenter. All rights reserved.
 //
 
+#import "AppDelegate.h"
 #import "ITLoginController.h"
-#import "ITAdminController.h"
 #import "ITStudentController.h"
 #import "ITTeacherController.h"
-#import "AppDelegate.h"
+#import "ITAdminController.h"
 #import "User+CoreDataClass.h"
+#import "Teacher+CoreDataClass.h"
+#import "Student+CoreDataClass.h"
 
 @interface ITLoginController () <UITextFieldDelegate>
 @property (weak, nonatomic) IBOutlet UITextField *userTextField;
@@ -61,6 +63,8 @@
         if (!self.rememberPassword.isOn) {
             self.passwordTextField.text = nil;
         }
+        // 这步是为了让登录成功以后可以将姓氏显示在 welcomeLabel 当中
+        self.appDelegate.name = users.firstObject.name;
         NSString *userMode = users.firstObject.userMode;
         if ([userMode isEqualToString:@"Admin"]) {
             ITAdminController *adminController = [self.storyboard instantiateViewControllerWithIdentifier:@"adminController"];
@@ -95,14 +99,36 @@
         NSLog(@"错误信息：%@, %@", searchError, searchError.userInfo);
     }
     if (users.count < 1) {
-        // 创建管理员
+        // 创建 3 个成员
         static dispatch_once_t onceToken;
         dispatch_once(&onceToken, ^{
-            User *user = [NSEntityDescription insertNewObjectForEntityForName:NSStringFromClass(User.class) inManagedObjectContext:self.appDelegate.managedObjectContext];
-            user.userName = @"admin";
-            user.password = @"123456";
-            user.userMode = @"Admin";
-            user.name = @"管理员";
+            // 创建管理员
+            User *adminUser = [NSEntityDescription insertNewObjectForEntityForName:NSStringFromClass(User.class) inManagedObjectContext:self.appDelegate.managedObjectContext];
+            adminUser.userName = @"admin";
+            adminUser.password = @"123456";
+            adminUser.userMode = @"Admin";
+            adminUser.name = @"管理员";
+            // 创建学生
+            User *teacherUser = [NSEntityDescription insertNewObjectForEntityForName:NSStringFromClass(User.class) inManagedObjectContext:self.appDelegate.managedObjectContext];
+            teacherUser.userName = @"xiaoming";
+            teacherUser.userMode = @"Teacher";
+            teacherUser.password = @"aaa";
+            teacherUser.name = @"明天";
+            Teacher *teacher = [NSEntityDescription insertNewObjectForEntityForName:NSStringFromClass(Teacher.class) inManagedObjectContext:self.appDelegate.managedObjectContext];
+            teacher.tNo = [NSString stringWithFormat:@"%d", arc4random()];
+            teacher.tName = teacherUser.name;
+            teacher.courses = nil;
+            // 创建学生
+            User *studentUser = [NSEntityDescription insertNewObjectForEntityForName:NSStringFromClass(User.class) inManagedObjectContext:self.appDelegate.managedObjectContext];
+            studentUser.userMode = @"Student";
+            studentUser.userName = @"wangnima";
+            studentUser.password = @"123";
+            studentUser.name = @"王涛";
+            Student *student = [NSEntityDescription insertNewObjectForEntityForName:NSStringFromClass(Student.class) inManagedObjectContext:self.appDelegate.managedObjectContext];
+            student.sName = studentUser.name;
+            student.sNo = [NSString stringWithFormat:@"%d", arc4random()];
+            student.course = nil;
+            student.sDept = @"CS";
             NSError *saveError = nil;
             if ([self.appDelegate.managedObjectContext save:&saveError]) {
                 NSLog(@"成功");

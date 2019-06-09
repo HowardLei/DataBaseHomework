@@ -52,7 +52,7 @@
         NSError *error = nil;
         // 当没有下面这行的时候出现这个 reason = "The model used to open the store is incompatible with the one used to create the store" 的时候，将这行加上。
         // 这表示之前之前保存的模型现在用来创建存储的模型不一致。
-        [NSFileManager.defaultManager removeItemAtURL:storeURL error:nil];
+//        [NSFileManager.defaultManager removeItemAtURL:storeURL error:nil];
         if (![_coordinator addPersistentStoreWithType:NSSQLiteStoreType configuration:nil URL:storeURL options:nil error:&error]) {
             NSLog(@"设置持久化存储器失败:%@, %@", error, error.userInfo);
             abort();
