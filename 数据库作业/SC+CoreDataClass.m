@@ -10,5 +10,8 @@
 #import "SC+CoreDataClass.h"
 
 @implementation SC
-
+- (NSString *)description
+{
+    return [NSString stringWithFormat:@"sNo = %@, cNo = %@, grade = %d", self.sNo, self.cNo, self.grade];
+}
 @end
