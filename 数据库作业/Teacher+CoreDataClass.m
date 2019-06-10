@@ -10,8 +10,7 @@
 #import "Teacher+CoreDataClass.h"
 
 @implementation Teacher
-- (NSString *)description
-{
+- (NSString *)description {
     return [NSString stringWithFormat:@"tName = %@, tNo = %@, courses = %@", self.tName, self.tNo, self.courses];
 }
 @end
