@@ -8,6 +8,7 @@
 //
 
 #import "ITStudentScoreController.h"
+#import "ITStudentScoreCell.h"
 
 @interface ITStudentScoreController ()
 
@@ -25,9 +26,9 @@
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     return 10;
 }
-- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
+- (ITStudentScoreCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     static NSString *const reuseIdentifier = @"studentScoreCell";
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:reuseIdentifier forIndexPath:indexPath];
+    ITStudentScoreCell *cell = [tableView dequeueReusableCellWithIdentifier:reuseIdentifier forIndexPath:indexPath];
     // Configure the cell...
     return cell;
 }

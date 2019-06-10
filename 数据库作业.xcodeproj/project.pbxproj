@@ -18,6 +18,7 @@
 		186ED20C22ABA8B200D71654 /* SC+CoreDataProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = 186ED20422ABA8B200D71654 /* SC+CoreDataProperties.m */; };
 		18B5E42B229965B700CF4781 /* ITAdminController.m in Sources */ = {isa = PBXBuildFile; fileRef = 18B5E42A229965B700CF4781 /* ITAdminController.m */; };
 		18B5E42E22996D9A00CF4781 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 18B5E42D22996D9A00CF4781 /* Assets.xcassets */; };
+		18BC5ABE22AE41A300B6C43E /* ITStudentScoreCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 18BC5ABD22AE41A300B6C43E /* ITStudentScoreCell.m */; };
 		18EC8FEB22AA85C700402A8C /* ITAdminStudentController.m in Sources */ = {isa = PBXBuildFile; fileRef = 18EC8FEA22AA85C700402A8C /* ITAdminStudentController.m */; };
 		18EC8FEF22AA8A1B00402A8C /* ITAdminTeacherController.m in Sources */ = {isa = PBXBuildFile; fileRef = 18EC8FEE22AA8A1B00402A8C /* ITAdminTeacherController.m */; };
 		18EC8FF222AA8C9B00402A8C /* ITManageController.m in Sources */ = {isa = PBXBuildFile; fileRef = 18EC8FF122AA8C9B00402A8C /* ITManageController.m */; };
@@ -59,6 +60,8 @@
 		18B5E429229965B700CF4781 /* ITAdminController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ITAdminController.h; sourceTree = "<group>"; };
 		18B5E42A229965B700CF4781 /* ITAdminController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ITAdminController.m; sourceTree = "<group>"; };
 		18B5E42D22996D9A00CF4781 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		18BC5ABC22AE41A300B6C43E /* ITStudentScoreCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ITStudentScoreCell.h; sourceTree = "<group>"; };
+		18BC5ABD22AE41A300B6C43E /* ITStudentScoreCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ITStudentScoreCell.m; sourceTree = "<group>"; };
 		18EC8FE922AA85C700402A8C /* ITAdminStudentController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ITAdminStudentController.h; sourceTree = "<group>"; };
 		18EC8FEA22AA85C700402A8C /* ITAdminStudentController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ITAdminStudentController.m; sourceTree = "<group>"; };
 		18EC8FED22AA8A1B00402A8C /* ITAdminTeacherController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ITAdminTeacherController.h; sourceTree = "<group>"; };
@@ -209,6 +212,8 @@
 			children = (
 				6395F01C228FF13D007EA3EB /* Main.storyboard */,
 				6395F021228FF13E007EA3EB /* LaunchScreen.storyboard */,
+				18BC5ABC22AE41A300B6C43E /* ITStudentScoreCell.h */,
+				18BC5ABD22AE41A300B6C43E /* ITStudentScoreCell.m */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -340,6 +345,7 @@
 				6395F03C22900206007EA3EB /* ITStudentController.m in Sources */,
 				186ED20522ABA8B200D71654 /* Course+CoreDataClass.m in Sources */,
 				63CAC61F22A9767000EC9A17 /* User+CoreDataProperties.m in Sources */,
+				18BC5ABE22AE41A300B6C43E /* ITStudentScoreCell.m in Sources */,
 				6395F036228FFEE0007EA3EB /* ITRegisterController.m in Sources */,
 				18EC8FEF22AA8A1B00402A8C /* ITAdminTeacherController.m in Sources */,
 				186ED20622ABA8B200D71654 /* Course+CoreDataProperties.m in Sources */,
