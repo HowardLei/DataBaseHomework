@@ -69,8 +69,8 @@ typedef NS_ENUM(NSUInteger, ITUser) {
             if (!searchResult.count) {
                 Student *student = [NSEntityDescription insertNewObjectForEntityForName:NSStringFromClass([Student class]) inManagedObjectContext:self.appDelegate.managedObjectContext];
                 student.sName = user.name;
-                student.sNo = [NSString stringWithFormat:@"%lu", self.hash];
-                student.course = nil;
+                student.sNo = [NSString stringWithFormat:@"%d", arc4random()];
+                student.courses = nil;
                 student.sDept = nil;
                 if (![self.appDelegate.managedObjectContext save:&saveError]) {
                     NSLog(@"保存失败:%@, %@", saveError, saveError.userInfo);

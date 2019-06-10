@@ -3,7 +3,7 @@
     <entity name="Course" representedClassName="Course" syncable="YES">
         <attribute name="cName" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="cNo" optional="YES" attributeType="String" syncable="YES"/>
-        <relationship name="student" optional="YES" maxCount="1" deletionRule="Cascade" destinationEntity="Student" inverseName="course" inverseEntity="Student" syncable="YES"/>
+        <relationship name="student" optional="YES" maxCount="1" deletionRule="Cascade" destinationEntity="Student" inverseName="courses" inverseEntity="Student" syncable="YES"/>
         <relationship name="teacher" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Teacher" inverseName="courses" inverseEntity="Teacher" syncable="YES"/>
     </entity>
     <entity name="SC" representedClassName="SC" syncable="YES">
@@ -15,7 +15,7 @@
         <attribute name="sDept" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="sName" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="sNo" optional="YES" attributeType="String" syncable="YES"/>
-        <relationship name="course" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Course" inverseName="student" inverseEntity="Course" syncable="YES"/>
+        <relationship name="courses" optional="YES" toMany="YES" deletionRule="Cascade" destinationEntity="Course" inverseName="student" inverseEntity="Course" syncable="YES"/>
     </entity>
     <entity name="Teacher" representedClassName="Teacher" syncable="YES">
         <attribute name="tName" optional="YES" attributeType="String" syncable="YES"/>

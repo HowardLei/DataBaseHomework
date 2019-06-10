@@ -18,6 +18,6 @@
 @dynamic sDept;
 @dynamic sName;
 @dynamic sNo;
-@dynamic course;
+@dynamic courses;
 
 @end

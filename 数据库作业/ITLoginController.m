@@ -27,7 +27,7 @@
 // MARK: - View's life cycle
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
-    [self initAdmin];
+    [self initCoreData];
     if (!self.rememberPassword.isOn) {
         self.userTextField.text = nil;
     }
@@ -91,7 +91,7 @@
     return YES;
 }
 // MARK: - Core Data initialize
-- (void)initAdmin {
+- (void)initCoreData {
     NSFetchRequest *fetchRequest = [NSFetchRequest fetchRequestWithEntityName:NSStringFromClass(User.class)];
     NSError *searchError = nil;
     NSMutableArray<User *> *users = [[self.appDelegate.managedObjectContext executeFetchRequest:fetchRequest error:&searchError] mutableCopy];
@@ -127,7 +127,7 @@
             Student *student = [NSEntityDescription insertNewObjectForEntityForName:NSStringFromClass(Student.class) inManagedObjectContext:self.appDelegate.managedObjectContext];
             student.sName = studentUser.name;
             student.sNo = [NSString stringWithFormat:@"%d", arc4random()];
-            student.course = nil;
+            student.courses = nil;
             student.sDept = @"CS";
             NSError *saveError = nil;
             if ([self.appDelegate.managedObjectContext save:&saveError]) {

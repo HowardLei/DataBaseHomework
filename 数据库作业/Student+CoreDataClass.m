@@ -12,6 +12,6 @@
 @implementation Student
 - (NSString *)description
 {
-    return [NSString stringWithFormat:@"sNo = %@, sName = %@, sDept = %@, course = %@", self.sNo, self.sName, self.sDept, self.course];
+    return [NSString stringWithFormat:@"sNo = %@, sName = %@, sDept = %@, course = %@", self.sNo, self.sName, self.sDept, self.courses];
 }
 @end

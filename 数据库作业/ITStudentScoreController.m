@@ -50,5 +50,12 @@
     NSEntityDescription *entity = [NSEntityDescription entityForName:NSStringFromClass(Student.class) inManagedObjectContext:self.appDelegate.managedObjectContext];
     fetchRequest.entity = entity;
     fetchRequest.predicate = [NSPredicate predicateWithFormat:@"tName=%@", self.appDelegate.name];
+    NSError *searchError = nil;
+    NSArray<Student *> *results = [self.appDelegate.managedObjectContext executeFetchRequest:fetchRequest error:&searchError];
+    if (results == nil) {
+        @throw [NSException exceptionWithName:@"查找失败" reason:@"未查找到该学生的课程" userInfo:nil];
+    } else {
+        
+    }
 }
 @end
