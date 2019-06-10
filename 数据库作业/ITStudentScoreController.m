@@ -9,6 +9,9 @@
 
 #import "ITStudentScoreController.h"
 #import "ITStudentScoreCell.h"
+#import "AppDelegate.h"
+#import "Course+CoreDataClass.h"
+#import "Student+CoreDataClass.h"
 
 @interface ITStudentScoreController ()
 @property (nonatomic, weak) AppDelegate *appDelegate;
