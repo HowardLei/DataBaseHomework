@@ -10,5 +10,8 @@
 #import "Student+CoreDataClass.h"
 
 @implementation Student
-
+- (NSString *)description
+{
+    return [NSString stringWithFormat:@"sNo = %@, sName = %@, sDept = %@, course = %@", self.sNo, self.sName, self.sDept, self.course];
+}
 @end
