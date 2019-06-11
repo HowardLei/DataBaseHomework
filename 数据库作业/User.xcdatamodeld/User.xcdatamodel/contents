@@ -17,6 +17,10 @@
         <attribute name="sNo" optional="YES" attributeType="String" syncable="YES"/>
         <relationship name="courses" optional="YES" toMany="YES" deletionRule="Cascade" destinationEntity="Course" inverseName="student" inverseEntity="Course" syncable="YES"/>
     </entity>
+    <entity name="TC" representedClassName="TC" syncable="YES">
+        <attribute name="cNo" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="tNo" optional="YES" attributeType="String" syncable="YES"/>
+    </entity>
     <entity name="Teacher" representedClassName="Teacher" syncable="YES">
         <attribute name="tName" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="tNo" optional="YES" attributeType="String" syncable="YES"/>
@@ -34,5 +38,6 @@
         <element name="Student" positionX="-63" positionY="9" width="128" height="105"/>
         <element name="Teacher" positionX="-54" positionY="18" width="128" height="90"/>
         <element name="User" positionX="-63" positionY="-18" width="128" height="105"/>
+        <element name="TC" positionX="-36" positionY="45" width="128" height="75"/>
     </elements>
 </model>

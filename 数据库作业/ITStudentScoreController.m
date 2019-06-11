@@ -34,6 +34,8 @@
 - (ITStudentScoreCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     static NSString *const reuseIdentifier = @"studentScoreCell";
     ITStudentScoreCell *cell = [tableView dequeueReusableCellWithIdentifier:reuseIdentifier forIndexPath:indexPath];
+    cell.courseLabel.text = self.courses[indexPath.row].cName;
+    cell.scoreLabel.text = nil;
     // Configure the cell...
     return cell;
 }
