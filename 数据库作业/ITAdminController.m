@@ -46,15 +46,17 @@
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     static NSString *const reuseIdentifier = @"adminCell";
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:reuseIdentifier forIndexPath:indexPath];
-    NSString *arrayName = [[self.modes[indexPath.section] lowercaseString] stringByAppendingString:@"s"];
-    NSArray<User *> *array = [self valueForKey:arrayName];
-    cell.textLabel.text = array[indexPath.row].userName;
-    cell.detailTextLabel.text = array[indexPath.row].name;
     return cell;
 }
 // MARK: - Table view delegate
 - (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section {
     return self.modes[section];
+}
+- (void)tableView:(UITableView *)tableView willDisplayCell:(UITableViewCell *)cell forRowAtIndexPath:(NSIndexPath *)indexPath {
+    NSString *arrayName = [[self.modes[indexPath.section] lowercaseString] stringByAppendingString:@"s"];
+    NSArray<User *> *array = [self valueForKey:arrayName];
+    cell.textLabel.text = array[indexPath.row].userName;
+    cell.detailTextLabel.text = array[indexPath.row].name;
 }
 // MARK: - Lazy loading data
 - (NSArray<NSString *> *)modes {

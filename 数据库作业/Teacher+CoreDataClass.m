@@ -11,6 +11,6 @@
 
 @implementation Teacher
 - (NSString *)description {
-    return [NSString stringWithFormat:@"tName = %@, tNo = %@, courses = %@", self.tName, self.tNo, self.courses];
+    return [NSString stringWithFormat:@"tName = %@, tNo = %@, courses = %@", self.tName, self.tNo, self.courses.description];
 }
 @end

@@ -63,7 +63,7 @@
         if (!self.rememberPassword.isOn) {
             self.passwordTextField.text = nil;
         }
-        // 这步是为了让登录成功以后可以将姓氏显示在 welcomeLabel 当中
+        // 这步是为了让登录成功以后可以将姓氏显ffffff示在 welcomeLabel 当中
         self.appDelegate.name = users.firstObject.name;
         NSString *userMode = users.firstObject.userMode;
         if ([userMode isEqualToString:@"Admin"]) {

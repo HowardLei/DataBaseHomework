@@ -34,10 +34,13 @@
 - (ITStudentScoreCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     static NSString *const reuseIdentifier = @"studentScoreCell";
     ITStudentScoreCell *cell = [tableView dequeueReusableCellWithIdentifier:reuseIdentifier forIndexPath:indexPath];
-    cell.courseLabel.text = self.courses[indexPath.row].cName;
-    cell.scoreLabel.text = nil;
     // Configure the cell...
     return cell;
+}
+// MARK: - Table view delegate
+- (void)tableView:(UITableView *)tableView willDisplayCell:(ITStudentScoreCell *)cell forRowAtIndexPath:(NSIndexPath *)indexPath {
+    cell.courseLabel.text = self.courses[indexPath.row].cName;
+    cell.scoreLabel.text = nil;
 }
 // MARK: - Lazy loading datas
 - (AppDelegate *)appDelegate {
@@ -52,13 +55,14 @@
     NSFetchRequest *fetchRequest = [[NSFetchRequest alloc] init];
     NSEntityDescription *entity = [NSEntityDescription entityForName:NSStringFromClass(Student.class) inManagedObjectContext:self.appDelegate.managedObjectContext];
     fetchRequest.entity = entity;
-    fetchRequest.predicate = [NSPredicate predicateWithFormat:@"tName=%@", self.appDelegate.name];
+    fetchRequest.predicate = [NSPredicate predicateWithFormat:@"sName=%@", self.appDelegate.name];
     NSError *searchError = nil;
-    NSArray<Student *> *results = [self.appDelegate.managedObjectContext executeFetchRequest:fetchRequest error:&searchError];
-    if (results == nil) {
-        @throw [NSException exceptionWithName:@"查找失败" reason:@"未查找到该学生的课程" userInfo:nil];
-    } else {
-        
+    NSArray<Student *> *results = nil;
+    @try {
+        results = [self.appDelegate.managedObjectContext executeFetchRequest:fetchRequest error:&searchError];
+    } @catch (NSException *exception) {
+        NSLog(@"对不起，查找失败，请看看是不是实体或者是限制条件设置错误");
+        abort();
     }
 }
 @end
