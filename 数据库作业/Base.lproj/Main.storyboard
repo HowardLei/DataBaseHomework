@@ -235,28 +235,6 @@
                                             </constraints>
                                         </tableViewCellContentView>
                                     </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="teacherSettings" id="xC7-Yb-MbK">
-                                        <rect key="frame" x="0.0" y="88" width="1112" height="44"/>
-                                        <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="xC7-Yb-MbK" id="dmQ-1Z-arx">
-                                            <rect key="frame" x="0.0" y="0.0" width="1074" height="43.5"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                            <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="更多" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MyV-aO-9iK">
-                                                    <rect key="frame" x="20" y="10" width="43" height="23.5"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="21"/>
-                                                    <nil key="textColor"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
-                                            </subviews>
-                                            <constraints>
-                                                <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="MyV-aO-9iK" secondAttribute="trailing" constant="20" symbolic="YES" id="PRC-OD-iIG"/>
-                                                <constraint firstItem="MyV-aO-9iK" firstAttribute="top" secondItem="dmQ-1Z-arx" secondAttribute="top" constant="10" id="dBL-2Q-wmr"/>
-                                                <constraint firstItem="MyV-aO-9iK" firstAttribute="leading" secondItem="dmQ-1Z-arx" secondAttribute="leading" constant="20" id="hnT-T6-CQm"/>
-                                                <constraint firstAttribute="bottom" secondItem="MyV-aO-9iK" secondAttribute="bottom" constant="10" id="k2l-lk-IPq"/>
-                                            </constraints>
-                                        </tableViewCellContentView>
-                                    </tableViewCell>
                                 </cells>
                             </tableViewSection>
                         </sections>

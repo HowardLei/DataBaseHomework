@@ -22,6 +22,7 @@
 // MARK: - View's life cycle
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
+    [self initCoreData];
 }
 - (void)viewDidLoad {
     [super viewDidLoad];
