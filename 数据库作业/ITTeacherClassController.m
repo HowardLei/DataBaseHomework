@@ -9,12 +9,14 @@
 #import "ITTeacherClassController.h"
 #import "AppDelegate.h"
 #import "Teacher+CoreDataClass.h"
-@interface ITTeacherClassController ()
-@property (weak, nonatomic) IBOutlet UILabel *messageLabel;
+@interface ITTeacherClassController () <UITableViewDataSource, UITableViewDelegate>
 @property (nonatomic, weak) AppDelegate *appDelegate;
+@property (nonatomic, strong) Teacher *teacher;
+@property (nonatomic, strong) NSArray<Course *> *courses;
 @end
 
 @implementation ITTeacherClassController
+static NSString *const reuseIdentifier = @"cell";
 // MARK: - View's life cycle
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
@@ -23,6 +25,37 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+    // 先判断里面有没有内容，如果有课程则加载 TableView，否则加载 Label，提示没有任何课程。
+    UILabel *label = nil;
+    UITableView *tableView = nil;
+    if (!self.teacher.courses.count) {
+        label = [[UILabel alloc] init];
+        label.translatesAutoresizingMaskIntoConstraints = NO;
+        label.text = @"对不起，您还没添加课程，去添加一个课程吧。";
+        label.textColor = [UIColor lightGrayColor];
+        NSLayoutConstraint *labelCons1 = [NSLayoutConstraint constraintWithItem:label attribute:NSLayoutAttributeCenterXWithinMargins relatedBy:NSLayoutRelationEqual toItem:self.view attribute:NSLayoutAttributeCenterXWithinMargins multiplier:1 constant:0];
+        NSLayoutConstraint *labelCons2 = [NSLayoutConstraint constraintWithItem:label attribute:NSLayoutAttributeCenterYWithinMargins relatedBy:NSLayoutRelationEqual toItem:self.view attribute:NSLayoutAttributeCenterYWithinMargins multiplier:1 constant:0];
+        [self.view addSubview:label];
+        [NSLayoutConstraint activateConstraints:@[labelCons1, labelCons2]];
+    } else {
+        tableView = [[UITableView alloc] initWithFrame:CGRectMake(0, 35, CGRectGetWidth(self.view.bounds), CGRectGetHeight(self.view.bounds) - 35) style:UITableViewStylePlain];
+        tableView.dataSource = self;
+        tableView.delegate = self;
+        [tableView registerClass:UITableViewCell.class forCellReuseIdentifier:reuseIdentifier];
+        [self.view addSubview:tableView];
+    }
+}
+// MARK: - Table view data source
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
+    return self.teacher.courses.count;
+}
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:reuseIdentifier forIndexPath:indexPath];
+    return cell;
+}
+// MARK: - Table view delegate
+- (void)tableView:(UITableView *)tableView willDisplayCell:(nonnull UITableViewCell *)cell forRowAtIndexPath:(nonnull NSIndexPath *)indexPath {
+    cell.textLabel.text = @"123";
 }
 // MARK: - Lazy loading data
 - (AppDelegate *)appDelegate {
@@ -43,6 +76,8 @@
     if (teachers == nil) {
         @throw [NSException exceptionWithName:@"老师查找失败" reason:@"没有寻找到该老师" userInfo:nil];
     }
-    self.messageLabel.text = (!teachers.firstObject.courses.count) ? @"对不起，您还没添加课程，去添加一个课程吧。" : nil;
+//    self.messageLabel.text = (!teachers.firstObject.courses.count) ? @"对不起，您还没添加课程，去添加一个课程吧。" : nil;
+    self.teacher = teachers.firstObject;
+    self.courses = self.teacher.courses.allObjects;
 }
 @end

@@ -178,7 +178,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="7v2-iY-hEe" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="841" y="-414"/>
+            <point key="canvasLocation" x="1549" y="273"/>
         </scene>
         <!--更多-->
         <scene sceneID="1Q3-Vs-WnF">
@@ -327,27 +327,12 @@
                     <view key="view" contentMode="scaleToFill" id="TFd-7w-mJV">
                         <rect key="frame" x="0.0" y="0.0" width="1112" height="834"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aPx-Ve-wtU">
-                                <rect key="frame" x="530" y="404" width="52.5" height="26.5"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="22"/>
-                                <color key="textColor" cocoaTouchSystemColor="scrollViewTexturedBackgroundColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <constraints>
-                            <constraint firstItem="aPx-Ve-wtU" firstAttribute="centerX" secondItem="TFd-7w-mJV" secondAttribute="centerX" id="GQf-S6-hf9"/>
-                            <constraint firstItem="aPx-Ve-wtU" firstAttribute="centerY" secondItem="TFd-7w-mJV" secondAttribute="centerY" id="bfB-Y3-PDJ"/>
-                        </constraints>
                         <viewLayoutGuide key="safeArea" id="w9A-HE-bwv"/>
                     </view>
                     <navigationItem key="navigationItem" id="lbD-rf-wcm">
                         <barButtonItem key="rightBarButtonItem" title="管理班级" id="yDz-zd-bM2"/>
                     </navigationItem>
-                    <connections>
-                        <outlet property="messageLabel" destination="aPx-Ve-wtU" id="Tqf-KJ-W8q"/>
-                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="SBB-yH-8eE" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -445,7 +430,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="8Af-lV-oZL" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1655" y="1116"/>
+            <point key="canvasLocation" x="1549" y="1116"/>
         </scene>
         <!--更多-->
         <scene sceneID="Wkk-Nl-iQ6">
