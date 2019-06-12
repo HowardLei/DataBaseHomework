@@ -65,8 +65,8 @@
     if (teachers == nil) {
         @throw [NSException exceptionWithName:@"老师查找失败" reason:@"没有寻找到该老师" userInfo:nil];
     }
-    [self.teacherDict setValue:teachers.firstObject.tName forKey:@"tName"];
-    [self.teacherDict setValue:teachers.firstObject.tNo forKey:@"tNo"];
-    [self.teacherDict setValue:teachers.firstObject.courses forKey:@"courses"];
+    [self.teacherDict setObject:teachers.firstObject.tName forKey:@"tName"];
+    [self.teacherDict setObject:teachers.firstObject.tNo forKey:@"tNo"];
+    [self.teacherDict setObject:teachers.firstObject.courses forKey:@"courses"];
 }
 @end

@@ -9,6 +9,8 @@
 #import "ITTeacherClassController.h"
 #import "AppDelegate.h"
 #import "Teacher+CoreDataClass.h"
+#import "Course+CoreDataClass.h"
+
 @interface ITTeacherClassController () <UITableViewDataSource, UITableViewDelegate>
 @property (nonatomic, weak) AppDelegate *appDelegate;
 @property (nonatomic, strong) Teacher *teacher;
@@ -47,7 +49,7 @@ static NSString *const reuseIdentifier = @"cell";
 }
 // MARK: - Table view data source
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return self.teacher.courses.count;
+    return self.courses.count;
 }
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:reuseIdentifier forIndexPath:indexPath];
@@ -55,7 +57,7 @@ static NSString *const reuseIdentifier = @"cell";
 }
 // MARK: - Table view delegate
 - (void)tableView:(UITableView *)tableView willDisplayCell:(nonnull UITableViewCell *)cell forRowAtIndexPath:(nonnull NSIndexPath *)indexPath {
-    cell.textLabel.text = @"123";
+    cell.textLabel.text = self.courses[indexPath.row].cName;
 }
 // MARK: - Lazy loading data
 - (AppDelegate *)appDelegate {
@@ -76,7 +78,6 @@ static NSString *const reuseIdentifier = @"cell";
     if (teachers == nil) {
         @throw [NSException exceptionWithName:@"老师查找失败" reason:@"没有寻找到该老师" userInfo:nil];
     }
-//    self.messageLabel.text = (!teachers.firstObject.courses.count) ? @"对不起，您还没添加课程，去添加一个课程吧。" : nil;
     self.teacher = teachers.firstObject;
     self.courses = self.teacher.courses.allObjects;
 }
