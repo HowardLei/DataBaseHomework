@@ -313,7 +313,11 @@
                                 <action selector="back:" destination="gtV-tu-Ja9" id="LDb-TF-nB4"/>
                             </connections>
                         </barButtonItem>
-                        <barButtonItem key="rightBarButtonItem" title="编辑" id="8lw-zK-WNC"/>
+                        <barButtonItem key="rightBarButtonItem" title="编辑" id="8lw-zK-WNC">
+                            <connections>
+                                <action selector="editCell:" destination="gtV-tu-Ja9" id="LEK-x6-mEI"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="0Tq-Dl-yuQ" userLabel="First Responder" sceneMemberID="firstResponder"/>

@@ -19,10 +19,8 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
 }
-
 // MARK: - Button events
 - (IBAction)logout:(UIBarButtonItem *)sender {
     [self.navigationController popViewControllerAnimated:YES];
 }
-
 @end

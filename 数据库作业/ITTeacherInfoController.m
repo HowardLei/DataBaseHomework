@@ -13,7 +13,9 @@
 
 @interface ITTeacherInfoController ()
 @property (nonatomic, weak) AppDelegate *appDelegate;
-@property (nullable, nonatomic, strong) NSMutableDictionary<NSString *, id> *teacherDict;
+@property (nonatomic, strong) Teacher *teacher;
+@property (nullable, nonatomic, strong) NSDictionary<NSString *, NSString *> *teacherDict;
+@property (nonatomic, strong) NSArray<NSString *> *teacherProperties;
 @end
 
 @implementation ITTeacherInfoController
@@ -28,7 +30,7 @@
 }
 // MARK: - Table view data source
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return 1;
+    return self.teacherProperties.count;
 }
 - (ITTeacherInfoCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     static NSString *const reuseIdentifier = @"teacherInfoCell";
@@ -37,6 +39,14 @@
 }
 // MARK: - Table view delegate
 - (void)tableView:(UITableView *)tableView willDisplayCell:(ITTeacherInfoCell *)cell forRowAtIndexPath:(NSIndexPath *)indexPath {
+    NSString *key = self.teacherProperties[indexPath.row];
+    cell.nameLabel.text = self.teacherDict[key];
+    cell.valueLabel.text = [self.teacher valueForKey:key];
+}
+// MARK: - Button events
+- (IBAction)editCell:(UIBarButtonItem *)sender {
+    [self.tableView setEditing:!self.tableView.isEditing animated:YES];
+    sender.title = self.tableView.isEditing ? @"完成": @"编辑";
 }
 - (IBAction)back:(id)sender {
     [self.navigationController popViewControllerAnimated:YES];
@@ -48,9 +58,15 @@
     }
     return _appDelegate;
 }
-- (NSMutableDictionary<NSString *,id> *)teacherDict {
+- (NSArray<NSString *> *)teacherProperties {
+    if (_teacherProperties == nil) {
+        _teacherProperties = @[@"tName", @"tNo"];
+    }
+    return _teacherProperties;
+}
+- (NSDictionary<NSString *, NSString *> *)teacherDict {
     if (_teacherDict == nil) {
-        _teacherDict = [NSMutableDictionary dictionary];
+        _teacherDict = @{@"tName": @"姓名", @"tNo": @"教职工号"};
     }
     return _teacherDict;
 }
@@ -65,8 +81,6 @@
     if (teachers == nil) {
         @throw [NSException exceptionWithName:@"老师查找失败" reason:@"没有寻找到该老师" userInfo:nil];
     }
-    [self.teacherDict setObject:teachers.firstObject.tName forKey:@"tName"];
-    [self.teacherDict setObject:teachers.firstObject.tNo forKey:@"tNo"];
-    [self.teacherDict setObject:teachers.firstObject.courses forKey:@"courses"];
+    self.teacher = teachers.firstObject;
 }
 @end
