@@ -43,6 +43,9 @@
     cell.nameLabel.text = self.teacherDict[key];
     cell.valueLabel.text = [self.teacher valueForKey:key];
 }
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    
+}
 // MARK: - Button events
 - (IBAction)editCell:(UIBarButtonItem *)sender {
     [self.tableView setEditing:!self.tableView.isEditing animated:YES];
