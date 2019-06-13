@@ -335,7 +335,11 @@
                         <viewLayoutGuide key="safeArea" id="w9A-HE-bwv"/>
                     </view>
                     <navigationItem key="navigationItem" id="lbD-rf-wcm">
-                        <barButtonItem key="rightBarButtonItem" title="管理班级" id="yDz-zd-bM2"/>
+                        <barButtonItem key="rightBarButtonItem" title="管理班级" id="yDz-zd-bM2">
+                            <connections>
+                                <action selector="manageClass:" destination="aV4-Ge-tva" id="fFP-yo-Pdu"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="SBB-yH-8eE" userLabel="First Responder" sceneMemberID="firstResponder"/>
