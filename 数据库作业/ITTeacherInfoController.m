@@ -37,14 +37,41 @@
     ITTeacherInfoCell *cell = [tableView dequeueReusableCellWithIdentifier:reuseIdentifier forIndexPath:indexPath];
     return cell;
 }
+- (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath {
+    return YES;
+}
 // MARK: - Table view delegate
 - (void)tableView:(UITableView *)tableView willDisplayCell:(ITTeacherInfoCell *)cell forRowAtIndexPath:(NSIndexPath *)indexPath {
     NSString *key = self.teacherProperties[indexPath.row];
     cell.nameLabel.text = self.teacherDict[key];
     cell.valueLabel.text = [self.teacher valueForKey:key];
 }
+// FIXME: 修改功能暂时无法上线。数据无法正确修改，而且不能点击完编辑再修改
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
-    
+    UIAlertController *alertController = [UIAlertController alertControllerWithTitle:@"编辑" message:nil preferredStyle:UIAlertControllerStyleAlert];
+    UIAlertAction *editAction = [UIAlertAction actionWithTitle:@"编辑" style:UIAlertActionStyleDefault handler:^(UIAlertAction *action) {
+        NSFetchRequest *request = [NSFetchRequest fetchRequestWithEntityName:NSStringFromClass(Teacher.class)];
+        NSError *error = nil;
+        Teacher *teacher = [self.appDelegate.managedObjectContext executeFetchRequest:request error:&error].firstObject;
+        // 点击编辑按钮，执行大括号里面的逻辑。
+        UITextField *textField = alertController.textFields.firstObject;
+        // 1. 将新值修改到数据库当中
+        [teacher setValue:textField.text forKey:self.teacherProperties[indexPath.row]];
+        if (![self.appDelegate.managedObjectContext save:&error]) {
+            NSLog(@"修改失败 %@: %@", error, error.userInfo);
+        }
+        [self.tableView reloadData];
+    }];
+    [alertController addTextFieldWithConfigurationHandler:^(UITextField *textField) {
+        NSString *model = [self.teacher valueForKey:self.teacherProperties[indexPath.row]];
+        textField.text = model;
+        textField.clearButtonMode = UITextFieldViewModeWhileEditing;
+    }];
+    [alertController addAction:editAction];
+    [self presentViewController:alertController animated:YES completion:nil];
+}
+- (NSString *)tableView:(UITableView *)tableView titleForDeleteConfirmationButtonForRowAtIndexPath:(NSIndexPath *)indexPath {
+    return @"删除";
 }
 // MARK: - Button events
 - (IBAction)editCell:(UIBarButtonItem *)sender {
