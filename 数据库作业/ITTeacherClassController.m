@@ -64,6 +64,7 @@ static NSString *const reuseIdentifier = @"cell";
     if (self.view.subviews.count == 1 && [self.view.subviews.firstObject isMemberOfClass:UILabel.class]) {
         // 加载一个新控制器，设置里面的添加班级。
         UIViewController *viewController = [[UIViewController alloc] init];
+        [self.navigationController pushViewController:viewController animated:YES];
     }
 }
 // MARK: - Lazy loading data
