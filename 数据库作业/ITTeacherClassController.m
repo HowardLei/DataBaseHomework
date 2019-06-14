@@ -10,6 +10,7 @@
 #import "AppDelegate.h"
 #import "Teacher+CoreDataClass.h"
 #import "Course+CoreDataClass.h"
+#import "ITCourseController.h"
 
 @interface ITTeacherClassController () <UITableViewDataSource, UITableViewDelegate>
 @property (nonatomic, weak) AppDelegate *appDelegate;
@@ -62,9 +63,9 @@ static NSString *const reuseIdentifier = @"cell";
 // MARK: Button events
 - (IBAction)manageClass:(UIBarButtonItem *)sender {
     if (self.view.subviews.count == 1 && [self.view.subviews.firstObject isMemberOfClass:UILabel.class]) {
-        // 加载一个新控制器，设置里面的添加班级。
-        UIViewController *viewController = [[UIViewController alloc] init];
-        [self.navigationController pushViewController:viewController animated:YES];
+        // FIXME:加载一个新控制器，设置里面的添加班级。
+        ITCourseController *courseController = [[ITCourseController alloc] init];
+        [self.navigationController pushViewController:courseController animated:YES];
     }
 }
 // MARK: - Lazy loading data

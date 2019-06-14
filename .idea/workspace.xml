@@ -3,8 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="17b0b7a7-b7bf-4819-9d0d-892b0f312883" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/数据库作业.xcodeproj/project.xcworkspace/xcuserdata/apple.xcuserdatad/UserInterfaceState.xcuserstate" beforeDir="false" afterPath="$PROJECT_DIR$/数据库作业.xcodeproj/project.xcworkspace/xcuserdata/apple.xcuserdatad/UserInterfaceState.xcuserstate" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/数据库作业/AppDelegate.m" beforeDir="false" afterPath="$PROJECT_DIR$/数据库作业/AppDelegate.m" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/数据库作业/ITTeacherInfoController.m" beforeDir="false" afterPath="$PROJECT_DIR$/数据库作业/ITTeacherInfoController.m" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/数据库作业/ITTeacherClassController.m" beforeDir="false" afterPath="$PROJECT_DIR$/数据库作业/ITTeacherClassController.m" afterDir="false" />
     </list>
     <ignored path="$USER_HOME$/Library/Caches/AppCode2019.1/DerivedData/数据库作业-dpqhhpjctmzwdxeogbjepqvnqbxx/Build/Intermediates.noindex/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -17,35 +16,17 @@
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/数据库作业/ITTeacherInfoController.m">
+        <entry file="file://$PROJECT_DIR$/数据库作业/ITTeacherClassController.m">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-671">
-              <caret line="32" column="40" lean-forward="true" selection-start-line="32" selection-start-column="40" selection-end-line="32" selection-end-column="40" />
-              <folding>
-                <element signature="e#1651#2038#0" />
-                <element signature="e#1919#2064#0" />
-              </folding>
+            <state relative-caret-position="280">
+              <caret line="67" column="52" selection-start-line="67" selection-start-column="52" selection-end-line="67" selection-end-column="52" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/数据库作业/AppDelegate.m">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="420">
-              <caret line="55" column="23" lean-forward="true" selection-start-line="55" selection-start-column="23" selection-end-line="55" selection-end-column="23" />
-              <folding>
-                <element signature="e#0#2#0" />
-                <element signature="e#148#179#0" />
-                <element signature="e#209#403#0" />
-                <element signature="e#404#910#0" />
-                <element signature="e#911#1334#0" />
-                <element signature="e#1335#1558#0" />
-                <element signature="e#1559#1817#0" />
-                <element signature="e#1818#2008#0" />
-              </folding>
-            </state>
-          </provider>
+        <entry file="file://$PROJECT_DIR$/数据库作业/ITAdminTeacherController.h">
+          <provider selected="true" editor-type-id="text-editor" />
         </entry>
       </file>
     </leaf>
@@ -72,13 +53,14 @@
         <option value="$PROJECT_DIR$/数据库作业/ITLoginController.m" />
         <option value="$PROJECT_DIR$/数据库作业/AppDelegate.m" />
         <option value="$PROJECT_DIR$/数据库作业/ITTeacherInfoController.m" />
+        <option value="$PROJECT_DIR$/数据库作业/ITTeacherClassController.m" />
       </list>
     </option>
   </component>
   <component name="OCFindUsagesOptions" text="true" ivars="false" properties="true" derivedClasses="false" />
   <component name="ProjectFrameBounds">
-    <option name="x" value="878" />
-    <option name="y" value="575" />
+    <option name="x" value="766" />
+    <option name="y" value="621" />
     <option name="width" value="1598" />
     <option name="height" value="1101" />
   </component>
@@ -87,6 +69,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Cidr.FilesView" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -129,7 +112,6 @@
         </subPane>
       </pane>
       <pane id="Scope" />
-      <pane id="Cidr.FilesView" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -182,19 +164,19 @@
       <workItem from="1560053925572" duration="2734000" />
       <workItem from="1560152872620" duration="72000" />
       <workItem from="1560427602307" duration="4805000" />
+      <workItem from="1560507695241" duration="4769000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="10609000" />
+    <option name="totallyTimeSpent" value="15378000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="878" y="575" width="1598" height="1101" extended-state="0" />
-    <editor active="true" />
+    <frame x="766" y="621" width="1598" height="1101" extended-state="0" />
     <layout>
       <window_info id="Designer" order="0" />
       <window_info id="Favorites" order="1" side_tool="true" />
-      <window_info content_ui="combo" id="Project" order="2" visible="true" weight="0.21336761" />
+      <window_info active="true" content_ui="combo" id="Project" order="2" visible="true" weight="0.2159383" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
       <window_info anchor="bottom" id="Run" order="2" weight="0.32903865" />
@@ -300,9 +282,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/数据库作业/ITAdminTeacherController.h">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
     <entry file="file://$PROJECT_DIR$/数据库作业/ITTeacherController.h">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="299">
@@ -387,10 +366,17 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/数据库作业/ITTeacherInfoController.m">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1357">
+          <caret line="57" column="7" lean-forward="true" selection-start-line="57" selection-start-column="7" selection-end-line="57" selection-end-column="7" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/数据库作业/AppDelegate.m">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="420">
-          <caret line="55" column="23" lean-forward="true" selection-start-line="55" selection-start-column="23" selection-end-line="55" selection-end-column="23" />
+        <state relative-caret-position="1265">
+          <caret line="55" column="23" selection-start-line="55" selection-start-column="23" selection-end-line="55" selection-end-column="23" />
           <folding>
             <element signature="e#0#2#0" />
             <element signature="e#148#179#0" />
@@ -404,14 +390,20 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/数据库作业/ITTeacherInfoController.m">
+    <entry file="file:///Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator.sdk/System/Library/Frameworks/UIKit.framework/Headers/UIBarButtonItem.h">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-671">
-          <caret line="32" column="40" lean-forward="true" selection-start-line="32" selection-start-column="40" selection-end-line="32" selection-end-column="40" />
-          <folding>
-            <element signature="e#1651#2038#0" />
-            <element signature="e#1919#2064#0" />
-          </folding>
+        <state relative-caret-position="299">
+          <caret line="20" column="29" selection-start-line="20" selection-start-column="4" selection-end-line="20" selection-end-column="29" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/数据库作业/ITAdminTeacherController.h">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/数据库作业/ITTeacherClassController.m">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="280">
+          <caret line="67" column="52" selection-start-line="67" selection-start-column="52" selection-end-line="67" selection-end-column="52" />
         </state>
       </provider>
     </entry>

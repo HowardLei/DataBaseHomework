@@ -12,6 +12,7 @@
 		1847D50622AF63E70070B93C /* TC+CoreDataClass.m in Sources */ = {isa = PBXBuildFile; fileRef = 1847D50422AF63E70070B93C /* TC+CoreDataClass.m */; };
 		1847D50722AF63E70070B93C /* TC+CoreDataProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = 1847D50522AF63E70070B93C /* TC+CoreDataProperties.m */; };
 		1847D50A22AFB30F0070B93C /* ITTeacherInfoController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1847D50922AFB30F0070B93C /* ITTeacherInfoController.m */; };
+		1860E6A422B3C16300893503 /* ITCourseController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1860E6A322B3C16300893503 /* ITCourseController.m */; };
 		186ED20522ABA8B200D71654 /* Course+CoreDataClass.m in Sources */ = {isa = PBXBuildFile; fileRef = 186ED1F722ABA8B200D71654 /* Course+CoreDataClass.m */; };
 		186ED20622ABA8B200D71654 /* Course+CoreDataProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = 186ED1F822ABA8B200D71654 /* Course+CoreDataProperties.m */; };
 		186ED20722ABA8B200D71654 /* Teacher+CoreDataClass.m in Sources */ = {isa = PBXBuildFile; fileRef = 186ED1FB22ABA8B200D71654 /* Teacher+CoreDataClass.m */; };
@@ -54,6 +55,8 @@
 		1847D50522AF63E70070B93C /* TC+CoreDataProperties.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "TC+CoreDataProperties.m"; sourceTree = "<group>"; };
 		1847D50822AFB30F0070B93C /* ITTeacherInfoController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ITTeacherInfoController.h; sourceTree = "<group>"; };
 		1847D50922AFB30F0070B93C /* ITTeacherInfoController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ITTeacherInfoController.m; sourceTree = "<group>"; };
+		1860E6A222B3C16300893503 /* ITCourseController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ITCourseController.h; sourceTree = "<group>"; };
+		1860E6A322B3C16300893503 /* ITCourseController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ITCourseController.m; sourceTree = "<group>"; };
 		186ED1F522ABA8B200D71654 /* Course+CoreDataProperties.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Course+CoreDataProperties.h"; sourceTree = "<group>"; };
 		186ED1F622ABA8B200D71654 /* Course+CoreDataClass.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Course+CoreDataClass.h"; sourceTree = "<group>"; };
 		186ED1F722ABA8B200D71654 /* Course+CoreDataClass.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "Course+CoreDataClass.m"; sourceTree = "<group>"; };
@@ -174,6 +177,8 @@
 				6395F032228FFBF8007EA3EB /* ITLoginController.m */,
 				6395F034228FFEE0007EA3EB /* ITRegisterController.h */,
 				6395F035228FFEE0007EA3EB /* ITRegisterController.m */,
+				1860E6A222B3C16300893503 /* ITCourseController.h */,
+				1860E6A322B3C16300893503 /* ITCourseController.m */,
 			);
 			name = Other;
 			sourceTree = "<group>";
@@ -362,6 +367,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				1847D50622AF63E70070B93C /* TC+CoreDataClass.m in Sources */,
+				1860E6A422B3C16300893503 /* ITCourseController.m in Sources */,
 				1847D50A22AFB30F0070B93C /* ITTeacherInfoController.m in Sources */,
 				186ED20C22ABA8B200D71654 /* SC+CoreDataProperties.m in Sources */,
 				6395F026228FF13E007EA3EB /* main.m in Sources */,
