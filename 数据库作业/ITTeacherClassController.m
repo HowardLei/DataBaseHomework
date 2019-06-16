@@ -63,8 +63,8 @@ static NSString *const reuseIdentifier = @"cell";
 // MARK: Button events
 - (IBAction)manageClass:(UIBarButtonItem *)sender {
     if (self.view.subviews.count == 1 && [self.view.subviews.firstObject isMemberOfClass:UILabel.class]) {
-        // FIXME:加载一个新控制器，设置里面的添加班级。
-        ITCourseController *courseController = [[ITCourseController alloc] init];
+        // FIXME:加载一个课程控制器，设置里面的添加班级。
+        ITCourseController *courseController = [[ITCourseController alloc] initWithTeacher:self.teacher];
         [self.navigationController pushViewController:courseController animated:YES];
     }
 }
