@@ -16,6 +16,9 @@
 @property (nonatomic, weak) AppDelegate *appDelegate;
 @property (nonatomic, strong) Teacher *teacher;
 @property (nonatomic, strong) NSArray<Course *> *courses;
+@property (nonatomic, strong) UILabel *label;
+@property (nonatomic, strong) UITableView *tableView;
+@property (nonatomic, assign, getter=needRefresh) BOOL refresh;
 @end
 
 @implementation ITTeacherClassController
@@ -29,23 +32,16 @@ static NSString *const reuseIdentifier = @"cell";
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     // 先判断里面有没有内容，如果有课程则加载 TableView，否则加载 Label，提示没有任何课程。
-    UILabel *label = nil;
-    UITableView *tableView = nil;
+    [self checkWhichViewNeedLoading];
+}
+- (void)checkWhichViewNeedLoading {
     if (!self.teacher.courses.count) {
-        label = [[UILabel alloc] init];
-        label.translatesAutoresizingMaskIntoConstraints = NO;
-        label.text = @"对不起，您还没添加课程，去添加一个课程吧。";
-        label.textColor = [UIColor lightGrayColor];
-        NSLayoutConstraint *labelCons1 = [NSLayoutConstraint constraintWithItem:label attribute:NSLayoutAttributeCenterXWithinMargins relatedBy:NSLayoutRelationEqual toItem:self.view attribute:NSLayoutAttributeCenterXWithinMargins multiplier:1 constant:0];
-        NSLayoutConstraint *labelCons2 = [NSLayoutConstraint constraintWithItem:label attribute:NSLayoutAttributeCenterYWithinMargins relatedBy:NSLayoutRelationEqual toItem:self.view attribute:NSLayoutAttributeCenterYWithinMargins multiplier:1 constant:0];
-        [self.view addSubview:label];
+        NSLayoutConstraint *labelCons1 = [NSLayoutConstraint constraintWithItem:self.label attribute:NSLayoutAttributeCenterXWithinMargins relatedBy:NSLayoutRelationEqual toItem:self.view attribute:NSLayoutAttributeCenterXWithinMargins multiplier:1 constant:0];
+        NSLayoutConstraint *labelCons2 = [NSLayoutConstraint constraintWithItem:self.label attribute:NSLayoutAttributeCenterYWithinMargins relatedBy:NSLayoutRelationEqual toItem:self.view attribute:NSLayoutAttributeCenterYWithinMargins multiplier:1 constant:0];
+        [self.view addSubview:self.label];
         [NSLayoutConstraint activateConstraints:@[labelCons1, labelCons2]];
     } else {
-        tableView = [[UITableView alloc] initWithFrame:CGRectMake(0, 35, CGRectGetWidth(self.view.bounds), CGRectGetHeight(self.view.bounds) - 35) style:UITableViewStylePlain];
-        tableView.dataSource = self;
-        tableView.delegate = self;
-        [tableView registerClass:UITableViewCell.class forCellReuseIdentifier:reuseIdentifier];
-        [self.view addSubview:tableView];
+        [self.view addSubview:self.tableView];
     }
 }
 // MARK: - Table view data source
@@ -74,6 +70,24 @@ static NSString *const reuseIdentifier = @"cell";
         _appDelegate = (AppDelegate *)UIApplication.sharedApplication.delegate;
     }
     return _appDelegate;
+}
+- (UILabel *)label {
+    if (_label == nil) {
+        _label = [[UILabel alloc] init];
+        _label.translatesAutoresizingMaskIntoConstraints = NO;
+        _label.text = @"对不起，您还没添加课程，去添加一个课程吧。";
+        _label.textColor = [UIColor lightGrayColor];
+    }
+    return _label;
+}
+- (UITableView *)tableView {
+    if (_tableView == nil) {
+        _tableView = [[UITableView alloc] initWithFrame:CGRectMake(0, 35, CGRectGetWidth(self.view.bounds), CGRectGetHeight(self.view.bounds) - 35) style:UITableViewStylePlain];
+        _tableView.dataSource = self;
+        _tableView.delegate = self;
+        [_tableView registerClass:UITableViewCell.class forCellReuseIdentifier:reuseIdentifier];
+    }
+    return _tableView;
 }
 // MARK: - Initialize core data
 // FIXME: 不知道老师如何在课程当中添加学生
