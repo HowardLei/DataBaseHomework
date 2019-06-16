@@ -34,6 +34,9 @@ static NSString *const reuseIdentifier = @"cell";
     // 先判断里面有没有内容，如果有课程则加载 TableView，否则加载 Label，提示没有任何课程。
     [self checkWhichViewNeedLoading];
 }
+/**
+ 判断需要加载哪个控件
+ */
 - (void)checkWhichViewNeedLoading {
     if (!self.teacher.courses.count) {
         NSLayoutConstraint *labelCons1 = [NSLayoutConstraint constraintWithItem:self.label attribute:NSLayoutAttributeCenterXWithinMargins relatedBy:NSLayoutRelationEqual toItem:self.view attribute:NSLayoutAttributeCenterXWithinMargins multiplier:1 constant:0];
