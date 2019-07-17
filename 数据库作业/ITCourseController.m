@@ -9,7 +9,7 @@
 #import "ITCourseController.h"
 #import "AppDelegate.h"
 #import "Course+CoreDataClass.h"
-#import "Teacher+CoreDataClass.h"
+#import "ITTeacherClassController.h"
 
 @interface ITCourseController ()
 @property (nonatomic, strong) UITextField *courseNameTextField;
@@ -17,16 +17,16 @@
 @property (nonatomic, strong) UIBarButtonItem *addButton;
 @property (nonatomic, strong) UIBarButtonItem *backButton;
 @property (nonatomic, weak) AppDelegate *appDelegate;
-@property (nonatomic, strong) Teacher *teacher;
+@property (nonatomic, strong) ITTeacherClassController *teacherClassController;
 @property (nonatomic, assign, getter=isOpen) BOOL open;
 @end
 
 @implementation ITCourseController
 // MARK: - View's life cycle
-- (instancetype)initWithTeacher:(Teacher *)teacher {
+- (instancetype)initWithClassController:(ITTeacherClassController *)controller {
     self = [super init];
     if (self) {
-        self.teacher = teacher;
+        self.teacherClassController = controller;
     }
     return self;
 }
@@ -95,11 +95,12 @@
         alertController = [UIAlertController alertControllerWithTitle:@"添加成功" message:@"课程添加成功" preferredStyle:UIAlertControllerStyleAlert];
         [alertController addAction:[UIAlertAction actionWithTitle:@"好的" style:UIAlertActionStyleCancel handler:^(UIAlertAction * _Nonnull action) {
             // FIXME: 当控制器被弹出以后没法刷新之前的控制器
-            [self.navigationController popViewControllerAnimated:YES];
+            self.teacherClassController.refresh = YES;
+            [self.navigationController popToViewController:self.teacherClassController animated:YES];
         }]];
-        NSMutableSet<Course *> *courseSet = [NSMutableSet setWithSet:self.teacher.courses];
+        NSMutableSet<Course *> *courseSet = [NSMutableSet setWithSet:self.teacherClassController.teacher.courses];
         [courseSet addObject:course];
-        self.teacher.courses = courseSet;
+        self.teacherClassController.teacher.courses = courseSet;
     } else {
         alertController = [UIAlertController alertControllerWithTitle:@"添加失败" message:@"对不起，暂时无法添加" preferredStyle:UIAlertControllerStyleAlert];
         [alertController addAction:[UIAlertAction actionWithTitle:@"我再看看" style:UIAlertActionStyleCancel handler:^(UIAlertAction * _Nonnull action) {

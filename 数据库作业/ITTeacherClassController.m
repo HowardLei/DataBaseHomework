@@ -8,17 +8,14 @@
 
 #import "ITTeacherClassController.h"
 #import "AppDelegate.h"
-#import "Teacher+CoreDataClass.h"
 #import "Course+CoreDataClass.h"
 #import "ITCourseController.h"
 
 @interface ITTeacherClassController () <UITableViewDataSource, UITableViewDelegate>
 @property (nonatomic, weak) AppDelegate *appDelegate;
-@property (nonatomic, strong) Teacher *teacher;
 @property (nonatomic, strong) NSArray<Course *> *courses;
 @property (nonatomic, strong) UILabel *label;
 @property (nonatomic, strong) UITableView *tableView;
-@property (nonatomic, assign, getter=needRefresh) BOOL refresh;
 @end
 
 @implementation ITTeacherClassController
@@ -27,6 +24,9 @@ static NSString *const reuseIdentifier = @"cell";
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
     [self initCoreData];
+    if (self.needRefresh) {
+        [self checkWhichViewNeedLoading];
+    }
 }
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -63,7 +63,7 @@ static NSString *const reuseIdentifier = @"cell";
 - (IBAction)manageClass:(UIBarButtonItem *)sender {
     if (self.view.subviews.count == 1 && [self.view.subviews.firstObject isMemberOfClass:UILabel.class]) {
         // FIXME:加载一个课程控制器，设置里面的添加班级。
-        ITCourseController *courseController = [[ITCourseController alloc] initWithTeacher:self.teacher];
+        ITCourseController *courseController = [[ITCourseController alloc] initWithClassController:self];
         [self.navigationController pushViewController:courseController animated:YES];
     }
 }

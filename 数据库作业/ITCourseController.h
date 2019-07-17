@@ -7,11 +7,11 @@
 //
 
 #import <UIKit/UIKit.h>
-@class Teacher;
+@class ITTeacherClassController;
 NS_ASSUME_NONNULL_BEGIN
 
 @interface ITCourseController : UIViewController
-- (instancetype)initWithTeacher:(Teacher *)teacher;
+- (instancetype)initWithClassController:(ITTeacherClassController *)controller;
 @end
 
 NS_ASSUME_NONNULL_END
